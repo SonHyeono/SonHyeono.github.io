@@ -1,12 +1,10 @@
 ---
-
 title: "CodingTest-Tip"
 categories:
 
 - CodingTest
   feature_text: |
   The History of the CodingTest
-
 ---
 
 - [Chapter 1](#chapter1) CodingTest Tip
