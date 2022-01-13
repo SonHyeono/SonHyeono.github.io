@@ -1,24 +1,4 @@
 ---
-layout: post
-
-title: "CodingTest-Tip"
-
-summary: "CodingTest-Tip"
-
-author: sonny
-
-category: ["CodingTest-Tip"]
-
-tags: jekyll
-
-usemathjax: false
-
-permalink: /blog/CodingTest-Tip/
-
-comments: true
----
-
----
 
 title: "CodingTest-Tip"
 categories:
