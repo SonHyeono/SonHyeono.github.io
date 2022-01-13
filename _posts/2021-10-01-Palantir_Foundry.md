@@ -1,5 +1,5 @@
 ---
-title: "산학 R&D 프로젝트 인턴"
+title: "산학 R&D 프로젝트 인턴-Palantir_Foundry"
 categories:
   - Intern
 feature_text: |
