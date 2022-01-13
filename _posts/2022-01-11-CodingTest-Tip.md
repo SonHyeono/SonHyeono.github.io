@@ -1,9 +1,8 @@
 ---
 title: "CodingTest-Tip"
 categories:
-
-- CodingTest
-  feature_text: |
+  - CodingTest
+feature_text: |
   The History of the CodingTest
 ---
 
