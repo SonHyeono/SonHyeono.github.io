@@ -11,28 +11,28 @@
 
 # 1. Files excluded from Jekyll builds
 exclude:
-- README.md
-- CODE_OF_CONDUCT.md
-- CONTRIBUTING.md
-- screenshot.png
-- LICENSE
-- CNAME
-- Gemfile
-- Gemfile.lock
-- alembic-jekyll-theme.gemspec
-- .jekyll-cache
+  - README.md
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - screenshot.png
+  - LICENSE
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - alembic-jekyll-theme.gemspec
+  - .jekyll-cache
 
 # 2. Installed Gems
 plugins:
-- jekyll-sitemap
-- jekyll-mentions
-- jekyll-paginate
-- jekyll-seo-tag
-- jekyll-redirect-from
-- jekyll-feed
-- jekyll-commonmark
-- jekyll-include-cache
-- jemoji
+  - jekyll-sitemap
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-commonmark
+  - jekyll-include-cache
+  - jemoji
 
 # 3. Gem settings
 paginate: 2 # jekyll-paginate > items per page
@@ -43,20 +43,20 @@ twitter:
 author: SonHyeono # jekyll-seo-tag > default author
 social: # jekyll-seo-tag > social overrides
   name: SonHyeono # jekyll-seo-tag > real name
-  links:  # jekyll-seo-tag > social aliases (sameAs)
-#     - https://twitter.com/DavidDarnes
-#     - https://www.facebook.com/daviddarnes
-#     - https://www.linkedin.com/in/daviddarnes
+  links: # jekyll-seo-tag > social aliases (sameAs)
+    #     - https://twitter.com/DavidDarnes
+    #     - https://www.facebook.com/daviddarnes
+    #     - https://www.linkedin.com/in/daviddarnes
     - https://github.com/SonHyeono
 # markdown: CommonMark # Markdown parse settings, CommonMark performs slightly better an others in build time
 # commonmark:
-  # options: ["SMART", "FOOTNOTES"]
-  # extensions: ["strikethrough", "autolink", "table"]
+# options: ["SMART", "FOOTNOTES"]
+# extensions: ["strikethrough", "autolink", "table"]
 
 # 4. Jekyll settings
 sass:
   style: compressed # Style compression
-permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
+permalink: pretty # Permalink style (/YYYY/MM/DD/page-name/)
 excerpt_separator: <!-- more --> # Marks end of excerpt in posts
 timezone: Asia/Seoul # Timezone for blog posts and alike
 
@@ -72,19 +72,16 @@ collections:
 
 # 6. Jekyll collections settings
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
     values:
       image: "/assets/default-social-image.png" # Default image for sharing
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: post # Set the default layout for posts
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
@@ -92,10 +89,11 @@ defaults:
 
 # 7. Site settings
 encoding: utf-8 # Make sure the encoding is right
-lang: en-GB # Set the site language
+lang: en-US # Set the site language
 title: "성장하는 개발자, Sonny" # Site name or title, also used in jekyll-seo-tag
 logo: "/assets/logos/logo.svg" # Site logo, also used in jekyll-seo-tag
-description: >- # Site description and default description, also used in jekyll-seo-tag
+description:
+  >- # Site description and default description, also used in jekyll-seo-tag
 url: "https://SonHyeono.github.io" # Site url, also used in jekyll-seo-tag
 baseurl: ""
 repo: "https://github.com/SonHyeono"
@@ -105,49 +103,49 @@ email: "ok7624583@naver.com"
 # google_analytics: ""
 # google_analytics_anonymize_ip: ""
 # service_worker: false # Will turn off the service worker if set to false
-# short_name: "Al" # The web application short name, defaults to the site title
+short_name: "Son" # The web application short name, defaults to the site title
 css_inline: true # Will insert all styles into a single <style> block in the <head> element and remove the style <link> reference
 
 # 8. Site favicons & manifest icons
 favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
-  16: '/assets/logos/logo@16px.png'
-  32: '/assets/logos/logo@32px.png'
-  96: '/assets/logos/logo@96px.png'
-  120: '/assets/logos/logo@120px.png'
-  144: '/assets/logos/logo@144px.png'
-  180: '/assets/logos/logo@180px.png'
-  512: '/assets/logos/logo@512px.png'
-  1024: '/assets/logos/logo@1024px.png'
+  16: "/assets/logos/logo@16px.png"
+  32: "/assets/logos/logo@32px.png"
+  96: "/assets/logos/logo@96px.png"
+  120: "/assets/logos/logo@120px.png"
+  144: "/assets/logos/logo@144px.png"
+  180: "/assets/logos/logo@180px.png"
+  512: "/assets/logos/logo@512px.png"
+  1024: "/assets/logos/logo@1024px.png"
 
 # 9. Site navigation
 navigation_header:
-- title: Home
-  url: /
-- title: Elements
-  url: /elements/
-- title: Blog
-  url: /blog/
-- title: Categories
-  url: /categories/
-- title: Search
-  url: /search/
-- title: Fork Alembic
-  url: https://github.com/SonHyeono
+  - title: Home
+    url: /
+  - title: Elements
+    url: /elements/
+  - title: Blog
+    url: /blog/
+  - title: Categories
+    url: /categories/
+  - title: Search
+    url: /search/
+  - title: Fork Alembic
+    url: https://github.com/SonHyeono
 
 navigation_footer:
-- title: Created by SonHyeono
-  url: https://github.com/SonHyeono
+  - title: Created by SonHyeono
+    url: https://github.com/SonHyeono
 
 social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
-#   Twitter: https://twitter.com/DavidDarnes
-#   LinkedIn: https://www.linkedin.com/in/daviddarnes
+  #   Twitter: https://twitter.com/DavidDarnes
+  #   LinkedIn: https://www.linkedin.com/in/daviddarnes
   GitHub: https://github.com/SonHyeono
   link: https://darn.es
   RSS: /feed.xml
 
 sharing_links: # Appear at the bottom of single blog posts, add as desired. The value can be 'true' or the desired button colour
-#   Twitter: "#0d94e7"
-#   facebook: "#3B5998"
+  #   Twitter: "#0d94e7"
+  #   facebook: "#3B5998"
   Email: true
 
 # Load custom fonts from fonts.google.com etc
