@@ -6,7 +6,7 @@ feature_text: |
 feature_image: "https://picsum.photos/1300/400?image=989"
 ---
 
-"~~"
+"**더 하려고 해도 더 할게 없는 마지막의 마지막까지 다하는 최선**"
 
 ## 개발(진행중 혹은 완료)
 
