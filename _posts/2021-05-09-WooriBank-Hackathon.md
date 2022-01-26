@@ -10,7 +10,7 @@ feature_text: |
 
 # 서류 합격
 
-![WooriBankHack](https://user-images.githubusercontent.com/26592315/150896488-7b84ee39-4f42-4da7-9cfe-374b103b4acd.png){: width="100%" height="100%"}{: .center}
+![WooriBankHack](https://user-images.githubusercontent.com/26592315/150896488-7b84ee39-4f42-4da7-9cfe-374b103b4acd.png){: width="50%" height="50%"}{: .center}
 
 ## 프로그램 명칭
 
@@ -116,8 +116,8 @@ MY계좌
 
 ## 느낀점
 
-- 금융 서비스에 무엇이 필요할까 팀원들과 고민도 해보며 소비내역에 대한 서비스를 만들고자 [금융 데이터셋인 카드 사용내역](https://github.com/SonHyeono/Woori-hackathon/tree/main/raw_dataset)도 직접 지인들에게 연락을해서 수집도 하였습니다.
-
-- 금융 데이터들도 수집도 하고 그에 맞게 카테고리 별로 데이터를 분석을 알고리즘을 직접 만들어서 데이터를 분류를 하고 DB에 저장후에 앱에서 그 데이터를 꺼낼 수 있도록 하였습니다.
+- 금융 서비스에 무엇이 필요할까 팀원들과 고민도 해보며 소비내역에 대한 서비스를 만들고자 [금융 데이터셋인 카드 사용내역](https://github.com/SonHyeono/Woori-hackathon/tree/main/raw_dataset)도 직접 지인들에게 연락을해서 수집도 하고 그에 맞게 카테고리 별로 분류를 하는 알고리즘을 직접 만들어서 데이터를 분류를 하고 DB에 저장후에 앱에서 그 데이터를 꺼낼 수 있도록 하였습니다.
 
 - 이러한 과정 속에서 금융 데이터에 대한 가치와 소중함을 알게 되었고 이러한 데이터를 이용하는 데이터 분석가가 되고 싶어졌습니다.
+
+---
