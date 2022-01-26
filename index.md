@@ -40,7 +40,8 @@ DB : ORACLE, MySQL
 
 ## ⚗️BootCamp
 
-- [빅데이터 부트캠프](<https://sonhyeono.github.io/bootcamp/2022/01/15/PlayData(1)/>)
+- [빅데이터 부트캠프](https://sonhyeono.github.io/bootcamp/2022/01/15/PlayData(1)/)
+- 
 <!--
 
 ## Installation
