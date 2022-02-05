@@ -29,7 +29,9 @@ DB : ORACLE, MySQL
 
 - [우리은행 해커톤](https://github.com/SonHyeono/Woori-hackathon)
 
-- [Java MVC 패턴(Mini-Project)](https://github.com/SonHyeono/Mini-Project-MVC)
+- [Java MVC 패턴(DTO)을 이용한 프로젝트](https://github.com/SonHyeono/Mini-Project-MVC)
+
+- [자동 투자](https://github.com/SonHyeono/Automatic-Investment)
 
 ## ⚗️BootCamp
 

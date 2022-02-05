@@ -47,7 +47,7 @@ slack으로 메세지가 오는 것을 확인할 수 있다.
 
 ![image](https://user-images.githubusercontent.com/26592315/152378491-06982379-1f10-4b70-bc30-7d9fb33737eb.png){: width="100%" height="100%"}{: .center}
 
-4. install 해서 token 부여받기
+마지막으로 slack-api에서 install 해서 token 부여받기
 
 - 그 이후에 token을 이용해서 위의 python 코드를 돌려보면, 메세지가 잘 간다.
 
