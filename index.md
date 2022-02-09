@@ -10,11 +10,12 @@ feature_image: "https://picsum.photos/1300/400?image=989"
 
 ### 🚀Tech Stack
 
-Programming Language : Java, Python, C++
+Programming Language : Java, Python, C++, R
 
 ![java_original_wordmark_logo_icon_146459](https://user-images.githubusercontent.com/26592315/151185266-24387fdc-07c0-4a08-89e1-f9d28b4be426.png)
 ![python_vertical_logo_icon_168039](https://user-images.githubusercontent.com/26592315/151185260-b3349640-568a-40c6-a3f0-ebfecc941575.png)
 ![c_icon_132529](https://user-images.githubusercontent.com/26592315/151185261-2fb82558-9958-4c16-b087-0e4cc8f6a827.png)
+![Ricon](https://user-images.githubusercontent.com/26592315/153130827-710e9c7e-d194-4d87-b648-2b3a62b2b92b.png)
 
 DB : ORACLE, MySQL
 
@@ -32,6 +33,8 @@ DB : ORACLE, MySQL
 - [Java MVC 패턴(DTO)을 이용한 프로젝트](https://github.com/SonHyeono/Mini-Project-MVC)
 
 - [자동 투자](https://github.com/SonHyeono/Automatic-Investment)
+
+- [R을 이용한 데이터사이언스 수업](https://github.com/SonHyeono/DataScienceClass)
 
 ## ⚗️BootCamp
 
