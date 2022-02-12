@@ -6,12 +6,12 @@ feature_text: |
   The History of the 산학 R&D 프로젝트 인턴
 ---
 
-# Task
+#### Task
 
-> - ## 회사에서 [서울시 시민들의 버스 데이터](https://topis.seoul.go.kr/refRoom/openRefRoom_3_4.do)를 처리해서 대중교통의 흐름을 파악하고 어디에 환승센터를 설립하는 것이 좋을지에 대한 판단을 위해 데이터를 다루어 보기로 했습니다.
-> - ## 일단 서울시 버스에 관한 데이터를 간단히 다루어 보았다.
+> - 회사에서 [서울시 시민들의 버스 데이터](https://topis.seoul.go.kr/refRoom/openRefRoom_3_4.do)를 처리해서 대중교통의 흐름을 파악하고 어디에 환승센터를 설립하는 것이 좋을지에 대한 판단을 위해 데이터를 다루어 보기로 했습니다.
+> - 일단 서울시 버스에 관한 데이터를 간단히 다루어 보았다.
 
-# 1. jupyter notebook으로 데이터 다루기
+##### 1. jupyter notebook으로 데이터 다루기
 
 ```python
 import pandas as pd
@@ -24,7 +24,7 @@ trading = pd.read_csv('C:\\Users\\ok762\\Documents\\RapidMinerData\\노선별_OD
     C:\Users\ok762\.conda\envs\py38\lib\site-packages\IPython\core\interactiveshell.py:3165: DtypeWarning: Columns (1) have mixed types.Specify dtype option on import or set low_memory=False.
       has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
 
-## 간단히 1월 평일 버스 데이터를 열어봄.
+##### 간단히 1월 평일 버스 데이터를 열어봄.
 
 ```python
 print(trading)
@@ -72,7 +72,7 @@ plt.show()
 
 ![get_in](https://user-images.githubusercontent.com/26592315/139856242-799182ed-e345-4b02-99cc-c3a1f8cc3146.png){:width="100%" height="100%"}{: .center}
 
-## 간단히 승차정류장별로 승객수를 봄.
+##### 간단히 승차정류장별로 승객수를 봄.
 
 ```python
 get_out = trading.groupby(['하차_정류장ARS'])['승객수'].sum()
@@ -87,11 +87,11 @@ plt.show()
 
 ![get_out](https://user-images.githubusercontent.com/26592315/139856309-406aa1c8-efaf-4c80-b9b6-e5c384f72f9d.png){:width="100%" height="100%"}{: .center}
 
-## 똑같이 하차 정류장별로 승객수
+##### 똑같이 하차 정류장별로 승객수
 
-## 다음은 1월 평일 데이터의 노선들 중 종로13을 선택하여
+##### 다음은 1월 평일 데이터의 노선들 중 종로13을 선택하여
 
-## 종로13 노선에 대한 승차\_정류장명과 승객수의 관계임.
+##### 종로13 노선에 대한 승차\_정류장명과 승객수의 관계임.
 
 ```python
 line = trading.groupby(['노선명','승차_정류장명'])['승객수'].sum()
@@ -112,7 +112,7 @@ pd.DataFrame(df_ex1)
 
 ![jongro13](https://user-images.githubusercontent.com/26592315/139856331-8d315bb1-cf02-4467-a315-eb397ab88f47.png){:width="100%" height="100%"}{: .center}
 
-## 종로13 노선에 대한 정류장 별로 승객수
+##### 종로13 노선에 대한 정류장 별로 승객수
 
 <div>
 <style scoped>
@@ -244,7 +244,7 @@ pd.DataFrame(df_ex1)
 </table>
 </div>
 
-# 노선별 승객수가 가장 많은 정류장
+##### 노선별 승객수가 가장 많은 정류장
 
 ```python
 line = trading.groupby(['노선명','승차_정류장명'])
@@ -345,49 +345,41 @@ df
 
 ---
 
-# 2. RapidMiner로 데이터 돌려보기.
+#### 2. RapidMiner로 데이터 돌려보기.
 
 ![get_in_rapidminer](https://user-images.githubusercontent.com/26592315/139856878-c62e3abd-2fee-4829-8804-627945050adf.png){:width="100%" height="100%"}{: .center}
 
-> - ## 승차정류장과 승객수의 그래프를 rapidminer results에 visualization으로 확인
+> - 승차정류장과 승객수의 그래프를 rapidminer results에 visualization으로 확인
 
 ![get_out_rapidminer](https://user-images.githubusercontent.com/26592315/139856888-050f6ba2-21ef-4951-b352-ea6c33ea9e3c.png){:width="100%" height="100%"}{: .center}
 
-> - ## 하차정류장과 승객수의 그래프를 rapidminer results에 visualizations으로 확인
-
-<div>
-</br>
-</div>
+> - 하차정류장과 승객수의 그래프를 rapidminer results에 visualizations으로 확인
 
 ---
 
-# 3. 상용 version과 open version의 차이점
+#### 3. 상용 version과 open version의 차이점
 
-- ## 상용 version
+- ##### 상용 version
 
   ![rapidminer](https://user-images.githubusercontent.com/26592315/139856902-7cefb598-3cae-43e1-a6e8-3b9b6fd3fe2d.png){:width="100%" height="100%"}{: .center}
 
-- ## open version
+- ##### open version
   ![openrapidminer](https://user-images.githubusercontent.com/26592315/139856898-850c136f-2269-4502-aec9-6675c273b79f.png){:width="100%" height="100%"}{: .center}
 
-# 4. 시각화
+#### 4. 시각화
 
-- ## 데이터에 대한 시각화를 Folium 패키지를 이용해서 지도 위에서 띄우기로 함.
+- 데이터에 대한 시각화를 Folium 패키지를 이용해서 지도 위에서 띄우기로 함.
 
-## Folium
+##### Folium
 
-> - ## 시각화 패키지중 하나이며 leaflet.js 기반으로 지도를 그려주고 나온지가 오래되어서 안정적이며 pandas와 쉽게 연동이 가능함.
+> - 시각화 패키지중 하나이며 leaflet.js 기반으로 지도를 그려주고 나온지가 오래되어서 안정적이며 pandas와 쉽게 연동이 가능함.
 
 ---
 
-<div>
-</br>
-</div>
+#### 5. 결론
 
-# 5. 결론
+> - Foundry 답게 데이터가 들어왔을 때 시각화를 더 완벽하게 하기위해 Folium을 사용하기로 했고 이를 위해 정류장명으로 된 데이터에서 위도와 경도를 추출해야한다.
 
-> - ## Foundry 답게 데이터가 들어왔을 때 시각화를 더 완벽하게 하기위해 Folium을 사용하기로 했고 이를 위해 정류장명으로 된 데이터에서 위도와 경도를 추출해야한다.
+> - rapidminer를 이용하기 위해서 open version에는 visualizations이 없어서 엔진팀에 문의 해보기로 했음.
 
-> - ## rapidminer를 이용하기 위해서 open version에는 visualizations이 없어서 엔진팀에 문의 해보기로 했음.
-
-> - # 오세훈 서울시장님이 서울시에 서울역 같은 환승센터를 더 지어서 교통을 편리하게 하려고 하는데 그에 대해 데이터를 다루어보고 최적의 환승센터의 위치를 찾는 것이 목표이다.
+> - 오세훈 서울시장님이 서울시에 서울역 같은 환승센터를 더 지어서 교통을 편리하게 하려고 하는데 그에 대해 데이터를 다루어보고 최적의 환승센터의 위치를 찾는 것이 목표이다.

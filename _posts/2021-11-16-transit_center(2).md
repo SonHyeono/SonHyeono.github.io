@@ -21,9 +21,9 @@ feature_text: |
   - [Section 4.1](#section_4_1) 승차와 동일하게 진행
   - [Section 4.2](#section_4_2) 하차 Top 39 DataFrame을 Excel에 저장
 
-# Chapter 1 <a class="anchor" id="chapter1"></a>
+#### Chapter 1 <a class="anchor" id="chapter1"></a>
 
-## 2021년 1월~9월 평일 승하차 데이터 불러오기
+##### 2021년 1월~9월 평일 승하차 데이터 불러오기
 
 ```python
 import pandas as pd
@@ -222,9 +222,9 @@ busroute_0119
 <p>466680 rows × 9 columns</p>
 </div>
 
-# Section 1.1 <a class="anchor" id="section_1_1"></a>
+#### Section 1.1 <a class="anchor" id="section_1_1"></a>
 
-## 정류장별로 groupby 짓고 승객수를 sum한 데이터 준비(2021년 1월 ~ 9월 승차 데이터)
+##### 정류장별로 groupby 짓고 승객수를 sum한 데이터 준비(2021년 1월 ~ 9월 승차 데이터)
 
 ```python
 # 1월 승차 평일
@@ -284,11 +284,11 @@ busstop_0921 = pd.DataFrame(busstop_0921)
 getin_0921 = busstop_0921.sort_values(by ='승객수',axis=0,ascending=False).reset_index()
 ```
 
-# Chapter 2 <a class="anchor" id="chapter2"></a>
+#### Chapter 2 <a class="anchor" id="chapter2"></a>
 
-# Section 2.1 <a class="anchor" id="section_2_1"></a>
+#### Section 2.1 <a class="anchor" id="section_2_1"></a>
 
-## 2021년 1월 ~ 9월까지 평일 승차 데이터를 Top 20으로 분류 & 기본키 수정
+##### 2021년 1월 ~ 9월까지 평일 승차 데이터를 Top 20으로 분류 & 기본키 수정
 
 > - 1월 부터 9월까지 평일 승차 데이터를 '승객수' 기준으로 Top 20으로 분류하였습니다.
 > - 알아보기 쉬운 기본키로 정류장명에 정류장 ID를 문자열로 결합한 열로 '정류장명'으로 새로 만들었습니다.
@@ -582,9 +582,9 @@ top20_0615
 </table>
 </div>
 
-# Section 2.2 <a class="anchor" id="section_2_2"></a>
+#### Section 2.2 <a class="anchor" id="section_2_2"></a>
 
-## 2021년 1월 ~ 9월까지의 Top 20 승차 데이터를 bar로 시각화
+##### 2021년 1월 ~ 9월까지의 Top 20 승차 데이터를 bar로 시각화
 
 > - 1월 부터 9월까지 '승객수'를 기준으로 분류한 Top 20을 bar chart로 시각화 했습니다.
 
@@ -667,9 +667,9 @@ plt.show()
 
 <img width="1113" alt="top20_9" src="https://user-images.githubusercontent.com/26592315/141969355-99419708-4099-4add-886d-0529e6b4a022.png">{:width="100%" height="100%"}{: .center}
 
-# Chapter 3 <a class="anchor" id="chapter3"></a>
+#### Chapter 3 <a class="anchor" id="chapter3"></a>
 
-## 2021년 1월 ~ 9월까지의 승차 데이터 합병
+##### 2021년 1월 ~ 9월까지의 승차 데이터 합병
 
 ```python
 getin_0119.rename(columns={'승객수':'1월_평일승차수'},inplace = True)
@@ -876,11 +876,11 @@ boarding
 <p>12641 rows × 10 columns</p>
 </div>
 
-# Section 3.1 <a class="anchor" id="section_3_1"></a>
+#### Section 3.1 <a class="anchor" id="section_3_1"></a>
 
-## 합병한 데이터로부터 Top39으로 분류 & 1~9 월까지의 총합과 평균 구하기
+##### 합병한 데이터로부터 Top39으로 분류 & 1~9 월까지의 총합과 평균 구하기
 
-## + 합병한 데이터 셋의 기본키 수정
+##### + 합병한 데이터 셋의 기본키 수정
 
 > - 합병한 데이터로 부터 Top 39를 뽑았고 1~9 월까지의 총합과 평균 그리고 알아보기 편하게 문자열을 조합한 '정류장명'이라는 열도 만들었습니다.
 
@@ -1566,9 +1566,9 @@ top39_weekday
 </table>
 </div>
 
-# Section 3.2 <a class="anchor" id="section_3_2"></a>
+#### Section 3.2 <a class="anchor" id="section_3_2"></a>
 
-## X좌표, Y좌표 대입
+##### X좌표, Y좌표 대입
 
 ```python
 bus_stop = pd.read_csv('C:/jupyter_data/서울시버스정류소좌표데이터(2021.01.14.).csv')
@@ -2409,9 +2409,9 @@ top39_weekday
 </table>
 </div>
 
-# Section 3.3 <a class="anchor" id="section_3_3"></a>
+#### Section 3.3 <a class="anchor" id="section_3_3"></a>
 
-## 승차 Top 39 DataFrame을 Excel에 저장
+##### 승차 Top 39 DataFrame을 Excel에 저장
 
 ```python
 #!pip install openpyxl
@@ -2421,15 +2421,15 @@ top39_weekday
 top39_weekday.to_excel('Top39평일승차수.xlsx', index=False)
 ```
 
-# Chapter 4 <a class="anchor" id="chapter4"></a>
+#### Chapter 4 <a class="anchor" id="chapter4"></a>
 
-# 2021년 1월 ~ 9월까지의 하차 데이터 합병
+##### 2021년 1월 ~ 9월까지의 하차 데이터 합병
 
-# Section 4.1 <a class="anchor" id="section_4_1"></a>
+#### Section 4.1 <a class="anchor" id="section_4_1"></a>
 
-## 승차와 동일하게 진행
+##### 승차와 동일하게 진행
 
-# 이제 Top39평일하차수를 구해보겠습니다.
+##### 이제 Top39평일하차수를 구해보겠습니다.
 
 ```python
 # 1월 하차 평일
@@ -4224,9 +4224,9 @@ getoff_weekday
 </table>
 </div>
 
-# Section 4.2 <a class="anchor" id="section_4_2"></a>
+#### Section 4.2 <a class="anchor" id="section_4_2"></a>
 
-## 하차 Top 39 DataFrame을 Excel에 저장
+##### 하차 Top 39 DataFrame을 Excel에 저장
 
 ```python
 getoff_weekday.to_excel('Top39평일하차수.xlsx', index=False)

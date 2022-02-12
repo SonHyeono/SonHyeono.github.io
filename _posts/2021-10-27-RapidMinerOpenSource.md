@@ -6,9 +6,9 @@ feature_text: |
   The History of the 산학 R&D 프로젝트 인턴
 ---
 
-# RapidMiner 상용 버전 말고 Github에서 다운받아서 오픈소스로 Run하기
+#### RapidMiner 상용 버전 말고 Github에서 다운받아서 오픈소스로 Run하기
 
-## 1. [rapidminer-studio](https://github.com/rapidminer/rapidminer-studio) 오픈소스 다운 받기
+##### 1. [rapidminer-studio](https://github.com/rapidminer/rapidminer-studio) 오픈소스 다운 받기
 
 ![opensource_error](https://user-images.githubusercontent.com/26592315/138993527-3b58cd1c-16eb-4c21-b5a1-ff7c4e87fdaf.png){: width="100%" height="100%"}{: .center}
 
@@ -16,7 +16,7 @@ feature_text: |
 
 ---
 
-## 2. Error 해결법
+##### 2. Error 해결법
 
 > - Error들의 이유는 버전과 관련된 환경 설정이 문제이기에
 
@@ -39,7 +39,7 @@ feature_text: |
 
 ---
 
-## 3. Run
+##### 3. Run
 
 ![opensource](https://user-images.githubusercontent.com/26592315/138995588-75f92b48-e2b6-4d26-b3d1-1f355f21df7f.png){: width="100%" height="100%"}{: .center}
 
@@ -61,7 +61,7 @@ class GUILauncher {
 }
 ```
 
-# 4. 공개SW 버전 빌드
+##### 4. 공개SW 버전 빌드
 
 ![opensource2](https://user-images.githubusercontent.com/26592315/138995750-1b147ebd-532e-4802-8d2c-8c58f8a79ef9.png){: width="100%" height="100%"}{: .center}
 

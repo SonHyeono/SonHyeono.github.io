@@ -67,7 +67,7 @@ feature_text: |
 
 ---
 
-# Task
+### Task
 
 > - RapidMiner와 DBMS( MongoDB, MySQL )등 연결 가능 확인
 
