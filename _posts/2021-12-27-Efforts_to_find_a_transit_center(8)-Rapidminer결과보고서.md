@@ -73,9 +73,7 @@ RapidMiner 자체 Operator 중 좌표를 이용하여 거리를 구하는 기능
 
 ##### 아크하버사인 공식
 
-$$
-d = r \times archav(h) = 2 \times r \times arcsin⁡(\sqrt{h})
-$$
+<img src="https://latex.codecogs.com/svg.latex?\Large&space; d = r \times archav(h) = 2r \times arcsin(\sqrt{h})" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
 
 Operator 개발을 위한 아크하버사인 구현 소스코드는 다음과 같다.
 
