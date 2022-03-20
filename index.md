@@ -39,3 +39,5 @@ DB : ORACLE, MySQL
 ## ⚗️BootCamp
 
 - [빅데이터 부트캠프](<https://sonhyeono.github.io/bootcamp/2022/01/15/PlayData(1)/>)
+
+- [KB 국민은행 IT 아카데미](<https://sonhyeono.github.io/kb%20%EA%B5%AD%EB%AF%BC%EC%9D%80%ED%96%89%20it%20%EC%95%84%EC%B9%B4%EB%8D%B0%EB%AF%B8/2022/03/20/KB_IT_Academy(1)/>)
