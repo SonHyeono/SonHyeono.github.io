@@ -13,6 +13,8 @@ feature_text: |
   - [Section 1.4](#section_1_4) 이진법
   - [Section 1.5](#section_1_5) Long과 int
   - [Section 1.6](#section_1_6) 배열
+  - [Section 1.7](#section_1_7) java의 람다식 표현
+  - [Section 1.8](#section_1_8) 백트래킹
 
 # Chapter 1 <a class="anchor" id="chapter1"></a> : Coding Test Tip
 
@@ -25,6 +27,10 @@ feature_text: |
 - Math.pow(x, 얼마나제곱할지) , Math.sqrt(x) : 제곱근
 
 - Math.round() : 반올림 , Math.ceil() : 올림 , Math.floor() : 내림 함수
+
+- Math.max 이용할 때 3개를 비교해야하는 경우 Math.max(arr[0], Math.max(arr[1], arr[2])) 이렇게 이용.
+
+- `이차원 배열에서 대각선인지 체크하려면 기울기 양인 대각선의 경우는 (행+열)이 같은 것들이고, 기울기가 음인 대각선의 경우는 (행-열)이 같은 것 들이다.`
 
 ---
 
@@ -78,7 +84,7 @@ Integer.toBinaryString(9 & 30);
 
 - Plus
 
-System.out.println(9 | 30) 을 하면 31이 나온다. 즉 알아서 이진법으로 위처럼 둘중에 하나라도 1이면 1로 되어진 최종 이진수가 다시 십진수로 나온다.
+`System.out.println(9|30) 을 하면 31이 나온다. 즉 알아서 이진법으로 위처럼 둘중에 하나라도 1이면 1로 되어진 최종 이진수가 다시 십진수로 나온다.`
 
 ---
 
@@ -123,3 +129,23 @@ Arrays.fill(array, 0);
 Arrays.fill(array, 2, 5, 0); // Replace elements from index 2 to index 4 by 0
 // array 배열에서 index 2번째 부터 4번째까지를 0으로 채움.
 ```
+
+---
+
+## Section 1.7 <a class="anchor" id="section_1_7"></a> java의 람다식 표현
+
+```
+list.stream().mapToInt(i->i.intValue()).toArray();
+// 1. list라는 ArrayList 안의 값들로 배열의 형태로 만들기.
+
+```
+
+---
+
+## Section 1.8 <a class="anchor" id="section_1_8"></a> 백트래킹
+
+백트래킹 : 현재 상태에서 가능한 모든 후보군을 따라 들어가며 탐색하는 알고리즘
+
+[백트래킹 설명 주소](https://www.youtube.com/watch?v=Enz2csssTCs)
+
+---
