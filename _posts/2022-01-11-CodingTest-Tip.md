@@ -32,6 +32,15 @@ feature_text: |
 
 - `이차원 배열에서 대각선인지 체크하려면 기울기 양인 대각선의 경우는 (행+열)이 같은 것들이고, 기울기가 음인 대각선의 경우는 (행-열)이 같은 것 들이다.`
 
+- 형 변환
+  | 처음 | 결과 | 문법|
+  |----|----|----|
+  |String|Int|Integer.parseInt(str) or Integer.valueOf(str) `두개의 차이는 기본 int 가 필요하면 parseInt() , Integer 래퍼 객체가 필요하면 valueOf() 를 사용하면 된다`|
+
+- HashSet과 List의 관계: (중복의 유무) List의 경우는 순서가 중요하지만 HashSet의 경우는 순서를 보장할 필요가 없기에 검색시간이 매우 짧다. 그렇기에 동작의 차이가 없다면 HashSet을 쓰자!
+
+- str.substring(a,b)를 하면 index a부터 b-1까지이다. ( python에서 list [포함:미포함] 이랑 마찬가지 ) `str.substring(0, 0)이면 아무것도 안 나온다.`
+
 ---
 
 ## Section 1.1 <a class="anchor" id="section_1_1"></a> 실수 방지
@@ -146,6 +155,26 @@ list.stream().mapToInt(i->i.intValue()).toArray();
 
 백트래킹 : 현재 상태에서 가능한 모든 후보군을 따라 들어가며 탐색하는 알고리즘
 
-[백트래킹 설명 주소](https://www.youtube.com/watch?v=Enz2csssTCs)
+좋은 문제:
+
+- [백준 15649](https://www.acmicpc.net/problem/15649) 
+- [프로그래머스 소수찾기](https://programmers.co.kr/learn/courses/30/lessons/42839)
+- [백준 백트래킹 문제들](https://www.acmicpc.net/step/34)
 
 ---
+
+## Section 1.8 <a class="anchor" id="section_1_8"></a> 소수
+
+```java
+public boolean isPrime(int n){
+        if(n==0 || n==1) return false;
+        for(int i=3; i<=(int)Math.sqrt(n); i+=2){
+            if(n%i==0) return false;
+        }
+        return true;
+    }
+```
+
+- isPrime 구현방식은 에라토스테네스의 체를 응용한 것 이고 N 까지의 소수목록을 제곱근 및 곱이 가능한 수를 제외하는 방식으로로 구하는데, 여기서는 나눗셈으로 바꾸어 소수의 목록이 아닌 소수여부만 체크한것입니다. 짝수부분을 제외하고 이를 증감식(i+=2)에도 적용. ( 이때 주의해야 할 것은 2도 소수이기에 isPrime을 쓰기전에 2를 처리해야한다.)
+
+`소수는 n의 배수가 아니어야 하고 입력받은 수보다 작은 수 들로 나누어서 떨어지면 소수가 아니다. 그러나 모두 나누어볼 필요없이, 루트 n 까지만 나누어서 떨어지면 소수가 아니다.`
