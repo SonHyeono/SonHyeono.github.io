@@ -32,6 +32,10 @@ feature_text: |
 - 문자열 열(columns)의 함수 호출시 .str 사용 ( df["name"].str.문자열함수() )
 - %whos : 매직 커맨드 ( 변수명, 유형, 데이터 정보를 상세히 반환합니다. )
 - ascending=False 하면 내림차순. 기본은 오름차순
+- 값이 return이 된다면 원본이 안 바뀐 것이기에, inplace를 True로 하거나 값을 덮어씌우기
+- [범주형 데이터 url](https://runebook.dev/ko/docs/pandas/user_guide/categorical)
+- 만약 (사용자)모듈을 import 하고나면 이미 메모리에 모듈이 올라가있기에 모듈을 수정을 해도 변경이 된 것이 적용이 안된다. 그래서 kernel Restart를 해야한다.
+- DataFrame에서 변경을 할 때 DataFrame.loc[] 에 값을 넣어야한다~ 그 행을 찾아서 넣기
 
 ## 기본 데이터 
 
@@ -191,6 +195,7 @@ apt_price["시군구"].str.split()  # Series 항목별로 split()을 하기 위�
 ## datetime
 
 - ***datetime 타입에서는 dt 접근자로 날짜 속성에 접근 가능***
+
 ```python
 # datetime 타입에서는 dt 접근자로 날짜 속성에 접근 가능
 import numpy as np
@@ -259,8 +264,8 @@ titanic.groupby(["sex","pclass"])[["survived","age"]].agg(["mean","max"])
 ## pivot_table
 
 ```python
-df.pivot_talbe(index="column", values= "") # 세로로 표가 만들어지고 values에는 통계 대상이 되는 column
-df.pivot_talbe(columns="column", values="") # 가로로 표가 만들어짐, values에는 통계 대상이 되는 column
+df.pivot_table(index="column", values= "") # 세로로 표가 만들어지고 values에는 통계 대상이 되는 column
+df.pivot_table(columns="column", values="") # 가로로 표가 만들어짐, values에는 통계 대상이 되는 column
 
 # pivot은 통계 대상을 직접 정해줘야합니다.
 
@@ -270,3 +275,108 @@ df.pivot_talbe(index="column", columns="column", values="", aggfunc=['sum','mean
 
 
 ```
+
+
+## apply
+
+```python
+# 시리즈 타입에 apply를 적용하면, 시리즈의 항목들이 전달이 됨.
+df['who'].apply(함수명)  # apply 괄호 안에는 함수가 들어가는데 ()를 뒤에 적으면 안된다. ()를 적으면 return값이 넘어가기에.  apply(함수명()) ( X )
+
+
+def f1(x):
+    if x=="man": return "남자"
+    elif x=="woman": return "여자"
+    elif x=="child": return "아이"
+    
+titanic['who'].apply(f1)
+
+'''
+0      남자
+1      여자
+2      여자
+3      여자
+4      남자
+       ..
+886    남자
+887    여자
+888    여자
+889    남자
+890    남자
+Name: who, Length: 891, dtype: object
+'''
+
+~.apply(f, axis= 0)  # apply에서 axis=0, 1을 줄 수 있다.
+# axis = 0 은 행 방향, 1은 열 방향
+
+
+# 데이터 양이 많을 경우  apply를 이용하면 한번만 훑는다.
+def get_date(x):                        
+    return x[0:4] + x[6:8] + x[9:11] 
+w["날짜"].apply(get_date)
+
+```
+
+## concat
+
+- 기본 값은 axis=0, axis=1을 하게되면 열 방향으로 연결 됨.
+- concat은 pandas에 있는 함수, append는 DataFrame에 있는 함수.
+
+```python
+gas3 = pd.concat([gas1, gas2]) # 하면 index 그대로 DataFrame이 연결이 된다.
+gas3.reset_index() # 그렇기에 reset_index 해줘야한다. (그러나 그 전 index가 있어서 그걸 삭제해줘야함.)
+
+# ------- reset_index가 번거로우면
+pd.concat([gas1, gas2], ignore_index=True)  # ignore_index를 하게 되면 새롭게 concat해도 새롭게 index가 생김.
+
+# ---------------------
+# 열 병합에서 index가 중요
+
+# concat에도 join이 있다.
+
+```
+
+## merge
+
+- 기본적으로 같은 column을 연결한다. (column명이 같은 것을 기준으로)
+
+```python
+pd.merge(score1, score2)  # 만약 같은 column이 없으면 error가 난다.
+# 병합하려는 컬럼의 이름이 다른 경우
+# left_on, right_on에 각각의 컬럼명을 지정해주면 그것이 기준이 되어서 합병이 된다.
+pd.merge(score1, score2, left_on="이름",right_on="학생이름")
+
+# column이름이 동일한 것들이 여러개 있으면, error가 나고 on에 지정을 해줘야한다.
+pd.merge(score1, score2, on="이름")
+
+```
+## lambda
+
+
+```python
+
+titanic['who'].apply(
+    lambda x: "남자" if x=="man" else 
+    "여자" if x=="woman" else "아이").value_counts()
+```
+
+## table 뽑기
+
+```python
+pd.read_html(url) # url의 table을 뽑아내진다. (웹사이트 마다 헤더가 필요한 경우도 있다. )
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
