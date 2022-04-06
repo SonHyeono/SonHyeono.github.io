@@ -28,7 +28,7 @@ plt.ylim(0,90)
 
 
 
-![image](./images/output_0_1.png)
+![image](./_posts/images/output_0_1.png)
 
 ---
 
@@ -76,7 +76,7 @@ plt.ylim(0, 100)
 
 
     
-![image](./images/output_2_1.png)
+![image](./_posts/images/output_2_1.png)
     
 
 
@@ -109,7 +109,7 @@ plt.ylim(0, 100)
 
 
     
-![image](./images/output_4_1.png)
+![image](./_posts/images/output_4_1.png)
     
 
 
@@ -188,7 +188,7 @@ plt.xlim(20,30)  # 상세히 보고 싶은 구간을 정하면 된다.
 
 
     
-![image](./images/output_11_1.png)
+![image](./_posts/images/output_11_1.png)
     
 
 
@@ -212,7 +212,7 @@ plt.legend()  # legend()는 기본이 best이고 best는 알아서 겹쳐지지 
 
 
     
-![image](./images/output_12_1.png)
+![image](./_posts/images/output_12_1.png)
     
 
 
@@ -246,7 +246,7 @@ plt.legend()
 
 
     
-![image](./images/output_13_1.png)
+![image](./_posts/images/output_13_1.png)
     
 
 
@@ -279,7 +279,7 @@ plt.legend()
 
 
     
-![image](./images/output_14_1.png)
+![image](./_posts/images/output_14_1.png)
     
 
 
@@ -388,7 +388,7 @@ plt.xticks(
 
 
     
-![image](./images/output_16_1.png)
+![image](./_posts/images/output_16_1.png)
     
 
 
@@ -421,7 +421,7 @@ plt.legend()
 
 
     
-![image](./images/output_17_1.png)
+![image](./_posts/images/output_17_1.png)
     
 
 
@@ -433,7 +433,7 @@ g_c = apt_price.groupby("구")["단지명"].count().sort_values().plot.barh()
 
 
     
-![image](./images/output_18_0.png)
+![image](./_posts/images/output_18_0.png)
     
 
 
@@ -448,7 +448,7 @@ g_c = apt_price.groupby("구")["단지명"].count().sort_values().plot.bar()
 
 
     
-![image](./images/output_19_0.png)
+![image](./_posts/images/output_19_0.png)
     
 
 
@@ -472,7 +472,7 @@ plt.hist(apt_price["거래금액(만원)"],
 
 
     
-![image](./images/output_20_1.png)
+![image](./_posts/images/output_20_1.png)
     
 
 
@@ -493,7 +493,7 @@ apt_price.groupby("계약월")["단지명"].count().plot()
 
 
     
-![image](./images/output_22_1.png)
+![image](./_posts/images/output_22_1.png)
     
 
 
@@ -518,7 +518,7 @@ gn3.groupby(["계약월","구"])["단지명"].count().unstack().plot()
 
 
     
-![image](./images/output_24_1.png)
+![image](./_posts/images/output_24_1.png)
     
 
 
@@ -538,7 +538,7 @@ gn3.pivot_table(index="계약월", columns="구", values="거래금액(만원)",
 
 
     
-![image](./images/output_26_1.png)
+![image](./_posts/images/output_26_1.png)
     
 
 
@@ -556,7 +556,7 @@ gn3.pivot_table(index="계약월", columns="구", values="거래금액(만원)",
 
 
     
-![image](./images/output_27_1.png)
+![image](./_posts/images/output_27_1.png)
     
 
 
@@ -574,7 +574,7 @@ gn3.pivot_table(index="계약월", columns="구", values="거래금액(만원)",
 
 
     
-![image](./images/output_28_1.png)
+![image](./_posts/images/output_28_1.png)
     
 
 
@@ -605,7 +605,7 @@ plt.boxplot(apt_price.loc[cond ,"거래금액(만원)"])
 
 
     
-![image](./images/output_31_1.png)
+![image](./_posts/images/output_31_1.png)
     
 
 
@@ -623,7 +623,7 @@ apt_price.pivot_table(index="계약월", columns="구", values="거래금액(만
 
 
     
-![image](./images/output_32_1.png)
+![image](./_posts/images/output_32_1.png)
     
 
 
@@ -748,7 +748,7 @@ sns.boxplot(x=tips["total_bill"])
 
 
     
-![image](./images/output_34_2.png)
+![image](./_posts/images/output_34_2.png)
     
 
 
@@ -766,7 +766,7 @@ sns.boxplot(data=tips,x="day",y="total_bill")
 
 
     
-![image](./images/output_35_1.png)
+![image](./_posts/images/output_35_1.png)
     
 
 
@@ -786,7 +786,7 @@ sns.boxplot(data=apt_price, x="구", y="거래금액(만원)")
 
 
     
-![image](./images/output_36_1.png)
+![image](./_posts/images/output_36_1.png)
     
 
 
@@ -810,7 +810,7 @@ sns.boxplot(data=apt_price.loc[cond,:], x="구", y="거래금액(만원)")
 
 
     
-![image](./images/output_38_1.png)
+![image](./_posts/images/output_38_1.png)
     
 
 
@@ -831,7 +831,7 @@ sns.boxplot(data=tips, x="day", y="tip", hue="size")
 
 
     
-![image](./images/output_40_1.png)
+![image](./_posts/images/output_40_1.png)
     
 
 
@@ -854,7 +854,7 @@ sns.heatmap(월별구별거래건수)
 
 
     
-![image](./images/output_42_1.png)
+![image](./_posts/images/output_42_1.png)
     
 
 
@@ -870,7 +870,7 @@ plt.show()
 
 
     
-![image](./images/output_44_0.png)
+![image](./_posts/images/output_44_0.png)
     
 
 
@@ -1030,7 +1030,7 @@ sns.pairplot(iris)
 
 
     
-![image](./images/output_47_1.png)
+![image](./_posts/images/output_47_1.png)
     
 
 
@@ -1154,7 +1154,7 @@ sns.pairplot(apt2)
 
 
     
-![image](./images/output_49_1.png)
+![image](./_posts/images/output_49_1.png)
     
 
 
@@ -1176,7 +1176,7 @@ sns.pairplot(apt3)
 
 
     
-![image](./images/output_51_1.png)
+![image](./_posts/images/output_51_1.png)
     
 
 
@@ -1196,7 +1196,7 @@ sns.pairplot(apt3, hue="구")
 
 
     
-![image](./images/output_52_1.png)
+![image](./_posts/images/output_52_1.png)
     
 
 
