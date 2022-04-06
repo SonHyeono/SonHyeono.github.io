@@ -36,6 +36,7 @@ feature_text: |
 - [범주형 데이터 url](https://runebook.dev/ko/docs/pandas/user_guide/categorical)
 - 만약 (사용자)모듈을 import 하고나면 이미 메모리에 모듈이 올라가있기에 모듈을 수정을 해도 변경이 된 것이 적용이 안된다. 그래서 kernel Restart를 해야한다.
 - DataFrame에서 변경을 할 때 DataFrame.loc[] 에 값을 넣어야한다~ 그 행을 찾아서 넣기
+- sort_values에서 Series( [] )면 컬럼을 안줘도 되지만 DataFrame( [[]] )이면 컬럼을 by로 꼭 줘야한다.
 
 ## 기본 데이터 
 
