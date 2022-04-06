@@ -1,5 +1,5 @@
 ---
-title: "아파트(매매)__실거래가를 이용한 데이터 시각화"
+title: "아파트(매매)실거래가를 이용한 데이터 시각화"
 categories:
   - KB 국민은행 IT 아카데미
 feature_text: |
