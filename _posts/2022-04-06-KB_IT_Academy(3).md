@@ -28,7 +28,9 @@ plt.ylim(0,90)
 
 
 
-![image](../_posts/images/output_0_1.png)
+![output_0_1](https://user-images.githubusercontent.com/26592315/162647735-59b13d41-2866-4d84-aaf5-fdfc763652d3.png)
+
+
 
 ---
 
@@ -76,8 +78,8 @@ plt.ylim(0, 100)
 
 
     
-![image](../_posts/images/output_2_1.png)
-    
+![output_2_1](https://user-images.githubusercontent.com/26592315/162647746-039324d1-9f5a-4930-a1a6-88a19042f01a.png)
+
 
 
 - 여러 그래프를 겹처 그리기
@@ -109,8 +111,8 @@ plt.ylim(0, 100)
 
 
     
-![image](../_posts/images/output_4_1.png)
-    
+![output_4_1](https://user-images.githubusercontent.com/26592315/162647753-0fc542d4-4b48-4a29-92df-86bf0907dee4.png)
+
 
 
 - x축 : xticks , y축 : yticks
@@ -188,7 +190,8 @@ plt.xlim(20,30)  # 상세히 보고 싶은 구간을 정하면 된다.
 
 
     
-![image](../_posts/images/output_11_1.png)
+![output_11_1](https://user-images.githubusercontent.com/26592315/162647755-029f45cb-50e4-4a24-a80f-b1a391135b0a.png)
+    
     
 
 
@@ -212,7 +215,8 @@ plt.legend()  # legend()는 기본이 best이고 best는 알아서 겹쳐지지 
 
 
     
-![image](../_posts/images/output_12_1.png)
+![output_12_1](https://user-images.githubusercontent.com/26592315/162647816-d2430948-3df4-47e5-bfb9-1b90de6cbee7.png)
+
     
 
 
@@ -246,7 +250,8 @@ plt.legend()
 
 
     
-![image](../_posts/images/output_13_1.png)
+![output_13_1](https://user-images.githubusercontent.com/26592315/162647822-9bec8858-f5cd-46da-a499-f76bd660b409.png)
+
     
 
 
@@ -279,7 +284,8 @@ plt.legend()
 
 
     
-![image](../_posts/images/output_14_1.png)
+![output_14_1](https://user-images.githubusercontent.com/26592315/162647844-d8b6107e-ab37-444c-a4e2-78324aa54b2b.png)
+
     
 
 
@@ -386,9 +392,8 @@ plt.xticks(
 
 
 
+![output_16_1](https://user-images.githubusercontent.com/26592315/162647847-2ce674e9-01e5-49f7-b8f1-736d02df27f9.png)
 
-    
-![image](../_posts/images/output_16_1.png)
     
 
 
@@ -421,7 +426,9 @@ plt.legend()
 
 
     
-![image](../_posts/images/output_17_1.png)
+![output_17_1](https://user-images.githubusercontent.com/26592315/162647859-53669bfc-6f0a-44f3-ad01-ef0f38d09b89.png)
+
+
     
 
 
@@ -433,7 +440,7 @@ g_c = apt_price.groupby("구")["단지명"].count().sort_values().plot.barh()
 
 
     
-![image](../_posts/images/output_18_0.png)
+![output_18_0](https://user-images.githubusercontent.com/26592315/162647860-371f6ba0-fa08-4d5b-8d33-e171b8169916.png)
     
 
 
@@ -447,9 +454,7 @@ g_c = apt_price.groupby("구")["단지명"].count().sort_values().plot.bar()
 ```
 
 
-    
-![image](../_posts/images/output_19_0.png)
-    
+![output_19_0](https://user-images.githubusercontent.com/26592315/162647862-e5fd2e8c-f9b4-49f8-9ea3-2aff8f52f236.png)
 
 
 
@@ -472,7 +477,7 @@ plt.hist(apt_price["거래금액(만원)"],
 
 
     
-![image](../_posts/images/output_20_1.png)
+![output_20_1](https://user-images.githubusercontent.com/26592315/162647864-d7b39b24-5216-41ae-b9b2-fdeeb55e137b.png)
     
 
 
@@ -493,7 +498,7 @@ apt_price.groupby("계약월")["단지명"].count().plot()
 
 
     
-![image](../_posts/images/output_22_1.png)
+![output_22_1](https://user-images.githubusercontent.com/26592315/162647883-78c7f011-2dde-425c-914f-8a944e26cdcb.png)
     
 
 
@@ -518,7 +523,7 @@ gn3.groupby(["계약월","구"])["단지명"].count().unstack().plot()
 
 
     
-![image](../_posts/images/output_24_1.png)
+![output_24_1](https://user-images.githubusercontent.com/26592315/162647886-95e61621-3d3b-4534-a566-7695adc22e01.png)
     
 
 
@@ -538,8 +543,8 @@ gn3.pivot_table(index="계약월", columns="구", values="거래금액(만원)",
 
 
     
-![image](../_posts/images/output_26_1.png)
-    
+![output_26_1](https://user-images.githubusercontent.com/26592315/162647888-e1843320-b81b-44ff-90e0-5b30a12b83c3.png)
+
 
 
 
@@ -556,8 +561,8 @@ gn3.pivot_table(index="계약월", columns="구", values="거래금액(만원)",
 
 
     
-![image](../_posts/images/output_27_1.png)
-    
+![output_27_1](https://user-images.githubusercontent.com/26592315/162647890-8096b338-af13-41ea-939f-1b475096b23a.png)
+
 
 
 
@@ -573,8 +578,7 @@ gn3.pivot_table(index="계약월", columns="구", values="거래금액(만원)",
 
 
 
-    
-![image](../_posts/images/output_28_1.png)
+![output_28_1](https://user-images.githubusercontent.com/26592315/162647906-0dd0cab8-5aa5-48cb-b4ec-b17fdb811a3f.png)
     
 
 
@@ -605,8 +609,8 @@ plt.boxplot(apt_price.loc[cond ,"거래금액(만원)"])
 
 
     
-![image](../_posts/images/output_31_1.png)
-    
+![output_31_1](https://user-images.githubusercontent.com/26592315/162647907-c38390b8-b175-4a2f-9389-3db85b73bf95.png)
+
 
 
 
@@ -623,7 +627,7 @@ apt_price.pivot_table(index="계약월", columns="구", values="거래금액(만
 
 
     
-![image](../_posts/images/output_32_1.png)
+![output_32_1](https://user-images.githubusercontent.com/26592315/162647908-ec333074-321d-45bb-83df-d697b7ca6466.png)
     
 
 
@@ -748,7 +752,7 @@ sns.boxplot(x=tips["total_bill"])
 
 
     
-![image](../_posts/images/output_34_2.png)
+![output_34_2](https://user-images.githubusercontent.com/26592315/162647909-345874d7-85db-4f57-9c3e-de73611e21f5.png)
     
 
 
@@ -766,7 +770,7 @@ sns.boxplot(data=tips,x="day",y="total_bill")
 
 
     
-![image](../_posts/images/output_35_1.png)
+![output_35_1](https://user-images.githubusercontent.com/26592315/162647921-350d39eb-1320-475d-91fc-51c9b7ce64ae.png)
     
 
 
@@ -786,7 +790,7 @@ sns.boxplot(data=apt_price, x="구", y="거래금액(만원)")
 
 
     
-![image](../_posts/images/output_36_1.png)
+![output_36_1](https://user-images.githubusercontent.com/26592315/162647923-77e4c442-3d1a-41ea-a4a7-b3aa033c6195.png)
     
 
 
@@ -810,7 +814,7 @@ sns.boxplot(data=apt_price.loc[cond,:], x="구", y="거래금액(만원)")
 
 
     
-![image](../_posts/images/output_38_1.png)
+![output_38_1](https://user-images.githubusercontent.com/26592315/162647924-c3599ade-8647-415b-bcf6-efe18cb79464.png)
     
 
 
@@ -831,8 +835,7 @@ sns.boxplot(data=tips, x="day", y="tip", hue="size")
 
 
     
-![image](../_posts/images/output_40_1.png)
-    
+![output_40_1](https://user-images.githubusercontent.com/26592315/162647925-af78e532-8e59-4476-b6b7-95476e019ccd.png)
 
 
 - 손님 수가 많을 수록 tip의 값이 높다.
@@ -854,8 +857,8 @@ sns.heatmap(월별구별거래건수)
 
 
     
-![image](../_posts/images/output_42_1.png)
-    
+![output_42_1](https://user-images.githubusercontent.com/26592315/162647932-1ddaf15b-7c9b-4544-93fe-7147da839709.png)
+
 
 
 - (밝을 수록 거래가 많음) 겨울에는 거래가 거의 없고 노원구의 거래가 많다. 
@@ -870,7 +873,7 @@ plt.show()
 
 
     
-![image](../_posts/images/output_44_0.png)
+![output_44_0](https://user-images.githubusercontent.com/26592315/162647935-6626b512-608c-4330-900f-3e2b67a5afa4.png)
     
 
 
@@ -1030,7 +1033,7 @@ sns.pairplot(iris)
 
 
     
-![image](../_posts/images/output_47_1.png)
+![output_47_1](https://user-images.githubusercontent.com/26592315/162647936-39fd2f9b-2acc-4b5d-a96d-8ee2032359db.png)
     
 
 
@@ -1153,9 +1156,7 @@ sns.pairplot(apt2)
 
 
 
-    
-![image](../_posts/images/output_49_1.png)
-    
+![output_49_1](https://user-images.githubusercontent.com/26592315/162647937-0e165d3d-9edb-4f40-84fa-f010ddeb9945.png)
 
 
 - (1,1) : 같은 평이여도 가격차이가 벌어진다.(입지에 따라서 가격차이가 많이 난다.)
@@ -1176,7 +1177,7 @@ sns.pairplot(apt3)
 
 
     
-![image](../_posts/images/output_51_1.png)
+![output_51_1](https://user-images.githubusercontent.com/26592315/162647940-4083ca83-afe7-45a1-874b-d8a01a3d19f1.png)
     
 
 
@@ -1196,7 +1197,7 @@ sns.pairplot(apt3, hue="구")
 
 
     
-![image](../_posts/images/output_52_1.png)
+![output_52_1](https://user-images.githubusercontent.com/26592315/162647941-c884fde9-ee04-444c-b6a3-a292dd4c8991.png)
     
 
 
