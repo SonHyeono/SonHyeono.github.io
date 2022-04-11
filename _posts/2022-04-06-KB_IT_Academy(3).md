@@ -28,7 +28,7 @@ plt.ylim(0,90)
 
 
 
-![image](./_posts/images/output_0_1.png)
+![image](../_posts/images/output_0_1.png)
 
 ---
 
