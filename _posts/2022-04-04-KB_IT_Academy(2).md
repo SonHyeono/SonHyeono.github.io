@@ -320,7 +320,7 @@ w["날짜"].apply(get_date)
 
 ## concat
 
-- 기본 값은 axis=0, axis=1을 하게되면 열 방향으로 연결 됨.
+- 기본 값은 axis=0, axis=1을 하게되면 옆으로 연결 됨.
 - concat은 pandas에 있는 함수, append는 DataFrame에 있는 함수.
 
 ```python
