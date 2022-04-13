@@ -135,7 +135,7 @@ y_train = y_train.drop(target.index)
   - RMSE : 제곱을 하면 값이 커지기에 루트를 씌움(너무 크면 log를 씌워서 비교하는 방법도 있음), 모델 간의 잔차를 비교(이상치에 덜 민감함, 큰 오류값 차이에 크게 패널티)
 
 
-- Linear Regression의 구현 방법으로는 최소 제곱법과 경사 하강법이 존재
+- Linear Regression(선형 회귀)의 구현 방법으로는 최소 제곱법과 경사 하강법이 존재
   - 최소 제곱법:
     
     잔차 제곱의 합이 최소가 되는 기울기와 편향은 편미분을 통해 도출 ( 잔차 제곱의 합이 최소가 되도록 기울기(Weight)와 편향(Bias)을 찾음 )
@@ -243,6 +243,68 @@ model.score(x_train, y_train), model.score(x_test, y_test)
 
 ```
 
+
+```python
+
+from sklearn.preprocessing import PolynomialFeatures
+P = PolynomialFeatures(degree=3, include_bias=False)
+x_poly = P.fit_transform(x)
+x_poly.shape  # 왜 2차가 9차로 변하냐면, (a+b)^3이라서 
+
+```
+- 2개의 열을 3차로 변환하면 다음과 같이 된다. ( (a+b)^3 식을 푼 개수 )
+  - ['x0', 'x1', 'x0^2', 'x0 x1', 'x1^2', 'x0^3', 'x0^2 x1', 'x0 x1^2', 'x1^3'] 
+  - 총 9차가 된다.
+
+```python
+  from sklearn.datasets import load_boston
+  boston = load_boston()
+  boston_df = pd.DataFrame(boston['data'], columns = boston['feature_names'])
+  boston_df["PRICE"] = boston.target
+  boston_df
+  x = boston_df.iloc[:, : -1]
+  y = boston_df.loc[:, "PRICE"]
+  x.shape
+
+  # (506, 13)
+
+  from sklearn.model_selection import train_test_split
+  x_tr, x_te, y_tr, y_te = train_test_split(
+      x, y, random_state = 0, test_size=0.25
+  )
+
+  from sklearn.linear_model import LinearRegression
+  model = LinearRegression().fit(x_tr, y_tr)
+  model.score(x_tr, y_tr), model.score(x_te, y_te)
+
+  # (0.7697699488741149, 0.6354638433202129)
+
+  from sklearn.preprocessing import PolynomialFeatures
+  P = PolynomialFeatures(degree=2, include_bias=False)
+  x_poly = P.fit_transform(x)
+  x_poly.shape 
+  # P.get_feature_names()
+
+  # (506, 104)
+
+  from sklearn.model_selection import train_test_split
+  x_tr, x_te, y_tr, y_te = train_test_split(                      
+      x_poly, y, random_state = 0, test_size=0.25   # x 대신에 2차를 적용한 x_poly로 분할
+  ) 
+
+  from sklearn.linear_model import LinearRegression
+  model = LinearRegression().fit(x_tr, y_tr)
+  model.score(x_tr, y_tr), model.score(x_te, y_te)
+
+  # (0.952051960903273, 0.6074721959725392) 
+```
+- 2차로 변환한 값을 집어 넣으니깐 train 데이터에서 정확도가 올라간다. 
+- test 데이터에서 정확도가 낮아졌지만, 적절한 차수를 주면 test 데이터의 정확도가 높아지는 경우도 있다.
+
+
+---
+
+
 ## 규제화 (Regularization)
 
 - 다항 회귀 시 차수가 높아 질수록 과대 적합이 발생하여 예측 성능이 저하되는 문제 ( 모의 고사는 높은데 본 시험은 낮은 것 )
@@ -262,3 +324,4 @@ model.score(x_train, y_train), model.score(x_test, y_test)
 
 
   - L1 + L2 규제 가중치 적용 (Elastic Net)
+
