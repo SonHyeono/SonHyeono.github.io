@@ -24,6 +24,9 @@ feature_text: |
 
 ## 기본
 
+
+- 컬럼의 범위를 줘서 뽑아내고 싶으면 df.loc[: , "plcass" : "sex"] , loc를 이용한 범위 추출을 줄 수 있고, fancy indexing으로도 가능. 
+- delimiter나 sep로 구분자를 설정해서 pd.read 가능
 - df.['col'] 하면 Series가 나오고
 - df.[['col']] 하면 DataFrame으로 나온다. (즉, list에 담으면 DataFrame 형태)
 - 함수에서 inplace는 원본 데이터를 바꿀 것이냐 마냐이다.

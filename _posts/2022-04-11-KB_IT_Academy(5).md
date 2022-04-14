@@ -13,6 +13,9 @@ feature_text: |
 
 ## 기본 지식
 
+- stratify 인자는 train과 test 데이터 세트의 범주 비율을 동일하게 유지해 줌.
+- train 데이터와 test 데이터를 나누기 위해서 사용하는 train_test_split 함수에서 파라미터인 random_state의 경우는 성능에 영향을 미치기도 하지만 실제 개발에 있어서 값을 주지는 않는다. 다만 결과값이 상대방과 똑같고 싶으면 random_state를 줘서 결과값을 같게 한다.
+
 - Feature : 칼럼(특성)이다. ( 독립변수, Attribute라고도 함 )
 - Label : 우리가 최종적으로 알아내고 싶은 값 ( 독립변수에 따라서 값이 변하기에 종속변수 , Class라고도 함.)
 - Scikit-learn : Object Detection이 필요, 간단한 이미지의 분류는 가능하지만 이미지 안에 뭐가 있고 등 복잡한 일은 못한다. 그래서 딥러닝이 복잡한 일을 해야한다.
@@ -54,6 +57,7 @@ feature_text: |
 - 값들이 한쪽에 치중되면 학습이 잘 안되고, 정규화가 되어야지 학습이 잘 된다. 
 - 잔차: 예측 값과 실제 값의 차이
 - 편향 : 절편
+- CV: 교차 검증
 
 ## 매개변수 지식
 
@@ -214,6 +218,61 @@ y_train = y_train.drop(target.index)
       - 답에 가까울수록 천천히 줄어들고 멀수록 많이 줄어든다. 
       - 가변적으로 접근
 
+  
+
+## Logistic Regression (로지스틱 회귀)
+
+- 선형 회귀 분석과 달리 예측하고자 하는 레이블이 범주형인 경우 사용되는 모델
+- 선형 회귀 모델 기반으로 확률 모델로 접근
+- Cost 함수 ( 확률이기 때문에 MSE가 아닌 Cross Entropy 사용)
+- Cost 최소화 ( Cost 값이 0에 가까울 수록 이상적 값)
+- 로지스틱 회귀 모델의 특징
+  - 모델의 예측 값은 범주 레이블(예: 정상(0), 불량(1))으로 얻어질 수 없고, 범주별 확률값을 반환 함.
+  - 분류 기준(Cut-off value)을 정의하여 확률을 레이블로 변환
+
+- 알고리즘 동작 과정
+  - Step 1: 로지스틱 회귀 모델을 학습시켜 예측 확률 P(Y=1 | X=x) 계싼
+  - Step 2: 분류 기준(Cut-off value) 를 결정
+  - Step 3: P(Y=1 | X=x)가 분류 기준보다 클경우 1, 작을 경우 0으로 분류
+
+```python
+import pandas as pd
+
+# delimiter나 sep로 구분자를 설정해서 read 가능
+redwine = pd.read_csv("red_wine.csv",delimiter=';')
+redwine['type'] = 0 
+whitewine = pd.read_csv("white_wine.csv",delimiter=';')
+whitewine['type'] = 1
+wine = pd.concat([redwine, whitewine])
+wine
+
+X = wine.iloc[:, :-1]
+Y = wine['type']
+X.shape, Y.shape
+
+# ((6497, 12), (6497,))
+
+from sklearn.model_selection import train_test_split
+x_tr, x_te, y_tr, y_te = train_test_split(
+    X, 
+    Y, 
+    random_state = 0, 
+    test_size=0.25, 
+    stratify=Y
+)
+
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression(max_iter=10000).fit(x_tr, y_tr)
+model.score(x_tr, y_tr), model.score(x_te, y_te)
+
+# (0.9844006568144499, 0.9852307692307692) 
+```
+- wine 데이터에서는 stratify를 주지않는 것이 score 값이 높긴하지만 비율을 정해주는 것이 좋다.
+
+
+
+
+---
 
 ## 다항 회귀 ( PolynomialFeatures )
 
