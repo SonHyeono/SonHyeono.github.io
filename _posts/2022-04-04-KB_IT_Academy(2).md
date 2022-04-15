@@ -22,6 +22,52 @@ feature_text: |
 
 - [where](#where)
 
+## 꿀팁
+
+```python
+# 열 별 고윳값 수 확인
+df.nunique()
+
+# 특정 열 타입 변경
+df = df.astype({'meter_reading':'int'})
+
+# groupby로 만든 DataFrame의 index 값을 열로 넣고 싶을 때
+df2 = df.groupby('primary_use')[['meter_reading']].mean()  # 혹은 .to_frame()
+df2.reset_index(level=['primary_use'], inplace = True)
+
+# primary_use 열을 정수로 변환 (Label Encoding)
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+label = df['primary_use']
+le.fit(label)
+label_encoded = le.transform(label)
+df['primary_use'] = pd.DataFrame(label_encoded, columns=['label_encoded'])
+
+# sns로 barplot
+sns.barplot(x='cloud_coverage', y='meter_reading',data=df3)
+plt.xticks(rotation=45) # x축 기울기 조절
+plt.show()
+
+# drop 열
+df = df.drop('cloud_coverage',axis=1)
+
+# min, max, mean, median, std, count
+df.groupby('=')[''].agg(['min', 'max', 'mean', 'median', 'std', 'count'])
+
+# timestamp를 datetime64로 변경
+df['timestamp'] = df['timestamp'].astype('datetime64')
+
+# timestamp에서 년, 분기, 월, 일, 요일, 시간을 추출하여 새 열 생성
+df['year'] = df['timestamp'].dt.year
+df['quarter'] = df['timestamp'].dt.quarter
+df['month'] = df['timestamp'].dt.month
+df['day'] = df['timestamp'].dt.day
+df['dayofweek'] = df['timestamp'].dt.dayofweek
+df['hour'] = df['timestamp'].dt.hour
+
+
+```
+
 ## 기본
 
 
@@ -177,9 +223,14 @@ np.cumsum() # np.sum과 비슷하고 축에 따라서 누적 합계
 
 - numpy.where()
     `np.where(조건, 참, 거짓)`
+    ```python
+    df['predict'] = np.where(df['predict'] == -1, 1, 0)
+    ```
 
 - pandas.where()
+
     `df.where(cond, other=nan, inplace=False, axis=None, level=None, errors='raise',try_cast=False)`
+    
     `df.where(조건, 조건이 거짓일 경우 대체 값, 원본을 수정할 것인가?(inplace) ... )`
 
 

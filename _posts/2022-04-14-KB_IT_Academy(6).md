@@ -1,5 +1,5 @@
 ---
-title: "데이터 분석을 위한 머신러닝/딥러닝 (2)"
+title: "데이터 분석을 위한 머신러닝 (2)"
 categories:
   - KB 국민은행 IT 아카데미
 feature_text: |
@@ -7,6 +7,23 @@ feature_text: |
 ---
 
 
+## 평가
+
+```python
+
+# 학습, 평가 데이터로  R-squared, MSE, MAE 확인
+from sklearn.metrics import r2_score
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_absolute_error
+
+pred_train = model.predict(X_train)
+pred_test = model.predict(X_test)
+print('Load')
+print('R squared : ', r2_score(Y_train,pred_train), r2_score(Y_test,pred_test) )
+print('Mean Squared Error: ', mean_squared_error(Y_train,pred_train), mean_squared_error(Y_test, pred_test))
+print('Mean Absolute Error: ', mean_absolute_error(Y_train,pred_train), mean_absolute_error(Y_test,pred_test) )
+
+```
 
 ## 기본지식
 
@@ -181,3 +198,208 @@ fi[fi!=0].sort_values(ascending=False).plot(kind='bar', figsize=(10,5))
     model.fit(x_train, y_train).score(x_test, y_test)
     ```
     - 여러 모델이 예측한 결과 값을 다른 모델의 학습 데이터로 입력하여 재학습
+
+## Grid Search
+
+- 모델에 가장 적합한 하이퍼 파라미터(Hyper Parameter)를 찾기 위해서 사용
+- 일반화 성능 향상을 통해 과대적합 현상을 개선할 수 있기 때문에 모델의 Hyper Parameter 튜닝 중요
+- 최적의 Hyper Parameter 튜닝을 위해서는 실험 가능한 모든 조합을 학습하고 평가가 필요
+
+```python
+from sklearn.datasets import load_digits
+digits = load_digits(as_frame=True)
+
+x_data = digits.data
+y_data = digits.target
+
+# digits['data'].shape, digits['target'].shape
+
+import pandas as pd
+digits = pd.concat([x_data, y_data],axis=1)
+
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import GridSearchCV
+model = KNeighborsClassifier()
+params = {
+    'n_neighbors' : range(1,10),
+}
+gs = GridSearchCV(model, params).fit(digits.iloc[:, :-1], digits.iloc[:, -1])
+report = pd.DataFrame(gs.cv_results_)
+print( gs.best_score_ )
+print( gs.best_params_ )
+print( gs.best_estimator_ )
+```
+
+## 교차 검증 ( Cross Validation, CV )
+
+- 고정적인 학습 데이터 세트로 모델을 만드는 경우 과대적합이 발생할 수 있고 이런 문제를 교차 검증을 통해 해결 가능.
+- 단점으로는 데이터가 순차적으로 들어가 있는 경우 shuffle을 하지않는 경우 성능이 매우 나쁨.
+
+```python
+from sklearn.model_selection import cross_val_score
+cross_val_score(model, digits.iloc[:, :-1], digits.iloc[:, -1],cv=5)
+
+from sklearn.model_selection import cross_val_predict
+cross_val_predict(model,digits.iloc[:, :-1], digits.iloc[:, -1], cv=5)
+```
+
+- k-겹 교차 검증(K-Fold Cross Validation)
+
+    - 데이터를 동일한 개수인 K개의 Fold로 분할
+    - 최적의 파라미터를 구하기 위한 모델 튜닝에서 주로 사용됨.
+
+## XGBOOST ( Extreme Gradient Boost )
+
+- pip install xgboost를 통해서 가능 
+
+- Gradient 계열 답게 성능이 좋으나 과적합이 심함.
+
+```python
+import xgboost as xgb
+from sklearn.datasets import load_boston
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score
+
+boston = load_boston()
+
+x_train, x_test, y_train, y_test = train_test_split(boston['data'],
+                                                   boston['target'],
+                                                   random_state=0)
+model = xgb.XGBRegressor(objective='reg:linear')
+model.fit(x_train, y_train)
+
+p_train = model.predict(x_train)
+p_test = model.predict(x_test)
+
+r2_score(y_train, p_train), r2_score(y_test, p_test)
+```
+
+## LightGBM
+
+- pip install lightgbm 으로 설치 가능
+
+- 10,000개 이상의 행을 가진 데이터에 사용하는 것을 권유 
+
+```python
+import lightgbm as lgb
+from sklearn.datasets import load_boston
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score
+
+boston = load_boston()
+
+x_train, x_test, y_train, y_test = train_test_split(boston['data'],
+                                                   boston['target'],
+                                                   random_state=0)
+lgb_train = lgb.Dataset(x_train, y_train)
+lgb_eval = lgb.Dataset(x_test, y_test, reference=lgb_train)
+
+params = {
+    'objective':'regression',
+}
+
+model = lgb.train(params, lgb_train, valid_sets=lgb_eval,
+                 early_stopping_rounds=5)
+
+p_train = model.predict(x_train, num_iteration=model.best_iteration)
+p_test = model.predict(x_test, num_iteration=model.best_iteration)
+
+r2_score(y_train, p_train), r2_score(y_test, p_test)
+```
+
+
+
+## 군집 분석
+
+- 주어진 데이터들을 특성에 따라 유사한 것끼리 묶음으로서 각 유형별 특징을 분석하는 기법
+- 같은 군집 내 데이터들의 거리를 최소화하거나 다른 군집 간의 거리를 최대화하는 군집을 형성
+    - 거리 척도는 유클리드 거리가 보편적으로 많이 사용됨.
+- 거리만 잘 적용되면 모든 유형의 데이터에 적용이 가능하나 거리와 가중치 정의가 어렵고 결과 해석이 어려운 단점이 있음.
+
+- 군집 방법론
+    - 계층적 방법
+    - 비계층적 방법
+
+- 군집 분석의 예
+    - 고객분류
+    - 이상치 탐지
+    - 이외에도 검색엔진, 차원 축소, 준지도 학습, 이미지 분할과 같은 영역에서도 사용 가능
+
+- K-Means
+    - 비지도 학습 기반의 대표적인 비계층적 군집 알고리즘
+    - 사전에 정의된 군집 수 K개로 데이터를 분할
+    - 최적의 군집 수 K를 정의하는 것이 많이 어려움
+    - 군집 형성 과정
+        - Step 1 : 랜덤하게 K개(사전의 정의)의 중앙점을 지정
+        - Step 2 : 유클리드 거리를 이용하여 군집의 중심점과의 거리 계산,
+                   가장 거리가 가까운 군짐으로 군집 할당
+        - Step 3 : 군집 내 데이터의 평균을 계산 후 새로운 중심점으로 배정, 중심점이 더 이상 이동 안할 때까지 반복
+
+    ```python
+    from sklearn.datasets import make_blobs
+    import matplotlib.pyplot as plt
+
+    x,y = make_blobs(
+        random_state=10, 
+        n_samples=100,  # 행 개수
+        n_features=2,   # 열 개수
+        centers=3       # 중심 개수(그룹 개수)
+    )
+    # x[:5], y[:5]
+
+    # plt.scatter(x[:, 0], x[:, 1], c=y)
+    from sklearn.cluster import KMeans
+    color = ['orange', 'green', 'red']
+    K = KMeans(n_clusters=3).fit(x)      # color를 없애고, n_clusters의 개수는 데이터 개수만큼 가능하다.
+    plt.scatter(x[:,0], x[:, 1], s=40, label='Sample')
+
+    centers = K.cluster_centers_
+
+    for idx, center in enumerate(centers):
+        plt.scatter(center[0], center[1], s=100,
+                label=f'Center {idx+1}', c=color[idx], marker='^')
+
+    plt.legend()
+    plt.show()
+
+    # ----- 
+    from sklearn.datasets import make_moons
+    x, y = make_moons(200, noise=0.05, random_state=0)
+    plt.scatter(x[:, 0], x[:, 1], c=y, s=50)
+
+    from sklearn.cluster import KMeans
+
+    labels = KMeans(n_clusters=2, random_state = 0).fit_predict(x)
+    plt.scatter(x[:,0], x[:,1], c=labels, s=50)
+    ```
+
+- DBSCAN ( density-based spatial clustering of applications with noise )
+
+    - 가까이에 있는 것들을 묶음, 밀집 기반 Clustering 
+    - 클러스터의 개수를 미리 지정할 필요가 없다.
+    - 복잡한 형상도 찾을 수 있으며, 어떤 클래스에서 속하지 않는 포인트를 구분할 수있음.
+    - 병합군집이나 K-Means보다는 느리지만 비교적 큰 데이터셋에도 적용 가능
+    - min_sampes와 eps에 값 변화에 따른 군집 결과를 분석해서 적정한 값 찾기
+
+    ```python
+    from sklearn.cluster import DBSCAN
+    labels = DBSCAN().fit_predict(x)
+    plt.scatter(x[:, 0], x[:, 1], c=labels, s=50)
+
+    from sklearn.preprocessing import StandardScaler
+    x_scaled = StandardScaler().fit_transform(x)
+
+    labels = DBSCAN().fit_predict(x_scaled)
+    plt.scatter(x_scaled[:, 0], x_scaled[:, 1], c=labels, s=50)
+
+    # ---
+    from sklearn.cluster import DBSCAN
+
+    dbscan = DBSCAN(eps=6, min_samples=20)
+    dbscan_labels = dbscan.fit_predict(df.iloc[:, :-1])
+
+    # eps값과 min_samples의 값을 바꾸면서 군집을 확인한다.
+    # 하이퍼 파라미터를 조절하면서 DBSCAN 모델을 학습
+    # eps가 반지름, 군집형성을 잘 해야함.
+    ```
+
