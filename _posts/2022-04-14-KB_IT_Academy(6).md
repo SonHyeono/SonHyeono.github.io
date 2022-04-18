@@ -30,7 +30,15 @@ print('Mean Absolute Error: ', mean_absolute_error(Y_train,pred_train), mean_abs
 - predict의 경우 2차원이여야 한다고 늘 상 생각하기. [[ ]]
 
 Logistic Regression에서는 문자형 안되기에, Label Encoding (부호화) 을 해서 숫자로 바꿔줘야한다.
+```python
+# 라벨 인코딩
+from sklearn.preprocessing import LabelEncoder
 
+for col in encoding_cols :
+    df[col] = encoder.fit_transform(df[col])
+
+df.head()
+```
 - One Hot Encoding : 
     - 문자열 범주형을 숫자로 바꿔줌.
     - 해당 열만 1로 바꿔주기에 나머지는 0으로 답에 영향을 안 미친다. 
@@ -39,6 +47,7 @@ Logistic Regression에서는 문자형 안되기에, Label Encoding (부호화) 
         - 숫자형 열은 그대로 두고 문자형 열은 새로운 DataFrame으로 One Hot Encoding 해준다.
         - 숫자형도 바꾸고 싶으면, get_dummies(df, columns=['열이름'])을 이용해서 숫자형도 바꿔줄 수 있다.
     ```python
+    # One Hot Encoding
     import pandas as pd
     X = pd.get_dummies(X, columns=['pclass','sex'])
     ````
@@ -54,7 +63,7 @@ Logistic Regression에서는 문자형 안되기에, Label Encoding (부호화) 
 
 ```python
 from sklearn.tree import DecisionTreeClassifier
-model = DecisionTreeClassifier().fit(x_train, y_train)
+model = DecisionTreeClassifier(max_depth= ).fit(x_train, y_train)
 model.score(x_train, y_train), model.score(x_test, y_test)
 
 model.feature_importances_
@@ -272,6 +281,13 @@ p_train = model.predict(x_train)
 p_test = model.predict(x_test)
 
 r2_score(y_train, p_train), r2_score(y_test, p_test)
+
+# ---
+
+from xgboost import XGBClassifier
+
+model = XGBClassifier().fit(X_train, y_train)
+model.score(X_train, y_train), model.score(X_test, y_test)
 ```
 
 ## LightGBM
@@ -305,6 +321,12 @@ p_train = model.predict(x_train, num_iteration=model.best_iteration)
 p_test = model.predict(x_test, num_iteration=model.best_iteration)
 
 r2_score(y_train, p_train), r2_score(y_test, p_test)
+
+# ---------------
+from lightgbm import LGBMClassifier
+
+model = LGBMClassifier().fit(X_train, y_train)
+model.score(X_train, y_train), model.score(X_test, y_test)
 ```
 
 
@@ -402,4 +424,113 @@ r2_score(y_train, p_train), r2_score(y_test, p_test)
     # 하이퍼 파라미터를 조절하면서 DBSCAN 모델을 학습
     # eps가 반지름, 군집형성을 잘 해야함.
     ```
+
+## Confusion Matrix
+
+```python
+# 정답과 비교하여 confusion matrix를 구하세요. (그대로 실행)
+from sklearn.metrics import confusion_matrix
+
+pd.DataFrame(confusion_matrix(y_test, pred),
+             index = [['Real']*3, [0,1,2]],
+             columns = [['Predict']*3, [0,1,2]])
+```
+
+
+## Pycaret
+
+- 기존에 있던 scikit-learn, XGBoost, LightGBM등 여러가지 머신러닝 라이브러리와 imblearn과 같은 데이터 전처리 라이브러리를 사용하기 용이하도록 ML High-Level API로 제작한 라이브러리
+- 단 몇줄 만에 데이터 분석 및 머신러닝 모델 성능 비교까지 가능하고, Log를 기본적으로 생성
+    - AutoML으로써 쉬운 난이도의 문제(이진 분류)의 경우 좋은 성능을 보임
+- 분류, 회귀, 군집, 이상 탐지, 자연어 처리 기능을 제공
+
+```python
+# Anaconda Prompt를 관리자 권한으로 실행을 해서
+# pip install pycaret --user pycaret 
+    # pycaret 설치시 --user pycaret  추가하여 실행해야함
+
+# wordcloud는 따로 다운받아 설치
+
+# https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud 에서 
+# wordcloud‑1.8.1‑cp39‑cp39‑win_amd64.whl 다운로드 후
+# pip install wordcloud‑1.8.1‑cp39‑cp39‑win_amd64.whl 실행하여 설치
+
+# 만약 colab google에서 실행하게 되면 !pip install pycaret이라고 하면 됨.
+# colab에서 에러가 뜨면
+# !pip install -U setuptools
+# !pip uninstall scikit-learn -y
+# !pip install scikit-learn==0.23.2 해주면 된다. 
+
+
+# 회귀형
+
+import pandas as pd
+from sklearn.datasets import load_boston
+boston = load_boston()
+df = pd.DataFrame(boston['data'], columns=boston['feature_names'])
+df['target'] = boston['target']
+df.head()
+
+from pycaret.regression import *
+
+df_setup = setup(data=df, target='target', fold_shuffle=True, session_id=2)
+
+compare_models()
+
+## 분류형 
+
+from pycaret.classification import *
+df_setup = setup(data=iris, target='species')
+
+
+top3 = compare_models(n_select=3, sort='Accuracy')
+top3_tuned = [ tune_model(n) for n in top3 ]
+top3_blend = blend_models(estimator_list=top3_tuned)
+final_model = finalize_model(top3_blend)
+pred = predict_model(final_model, data = iris.iloc[-20:])
+
+from pycaret.utils import check_metric
+check_metric(pred.species, pred.Label, metric="Accuracy")
+
+# plot
+
+plot_model(top3_blend, plot="error")
+
+plot_model(top3_blend, plot="confusion_matrix")
+
+```
+
+- 회귀
+
+![image](https://user-images.githubusercontent.com/26592315/163746053-bf697fea-5dfa-4007-9fa6-c555a640b181.png)
+
+
+- 분류
+
+![image](https://user-images.githubusercontent.com/26592315/163754235-0994cb2c-1611-46f3-87cb-ee828bfb65ca.png)
+
+- 
+
+
+
+- Pycaret 이용시 발생하는 error에 대한 [Stack overflow](https://stackoverflow.com/questions/67728802/valueerror-setting-a-random-state-has-no-effect-since-shuffle-is-false-you-sh)
+
+- [Pycaret 관련 자료](https://wiki.wikisecurity.net/faq:pycaret_error_simpleimputer)
+
+- [Pycaret plot](https://pycaret.gitbook.io/docs/)
+- python 3.8버전 가능
+
+- 모델 조합
+    - blend_models()
+    - 이전 단계에서 선택한 모델을 조합하여 더욱 강력한 앙상블 모델을 만듦.
+- 모델 튜닝
+    - tune_model()
+    - 모델을 튜닝하여 예측 성능을 향상
+
+- 최종 모델 학습
+    - finalize_model()
+    - 최종모델을 만들고 다시 한번 학습
+- 예측
+    - predict_model()
+    - 만들어진 모델로 예측
 
