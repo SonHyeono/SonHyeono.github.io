@@ -20,7 +20,8 @@ feature_text: |
 
 ## 데이터 수집
 
-
+DCASE, AudioSet, Urban Sound, FSD, Freesound 에 다량의 데이터를
+보유하고 있으면서 데이터 저작권 사용이 가능한 사이트 선정(예: FreeSound)
 
 ## 음성 분류 연습
 

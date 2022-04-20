@@ -25,6 +25,18 @@ feature_text: |
 ## 꿀팁
 
 ```python
+
+# 리스트 차집합
+lst1 = ['A', 'B', 'C', 'D']
+lst2 = ['C', 'D', 'E', 'F']
+complement = list(set(lst1) - set(lst2))
+print( complement ) # ['B', 'A']
+complement = list(set(lst1).difference(lst2))
+print( complement ) # ['A', 'B']
+
+# 에러 끄기
+pd.set_option('mode.chained_assignment',  None) 
+
 # 열 별 고윳값 수 확인
 df.nunique()
 
