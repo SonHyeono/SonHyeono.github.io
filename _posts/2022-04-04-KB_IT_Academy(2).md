@@ -78,6 +78,12 @@ df['dayofweek'] = df['timestamp'].dt.dayofweek
 df['hour'] = df['timestamp'].dt.hour
 
 
+reverse_word_index = dict([(value, key) for (key, value) in word_index.items()])
+# ***(꿀팁)***
+# 만약 word_index( dictionary )의 key, value의 위치를 바꾸고 싶을 때 하는 법 
+
+reverse_word_index.get(i-3, '?') # 만약 dictionary에 없을 경우, '?'로 대체
+
 ```
 
 ## 기본

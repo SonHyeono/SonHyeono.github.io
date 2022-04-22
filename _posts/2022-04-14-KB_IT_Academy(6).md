@@ -27,6 +27,7 @@ print('Mean Absolute Error: ', mean_absolute_error(Y_train,pred_train), mean_abs
 
 ## 기본지식
 
+
 - predict의 경우 2차원이여야 한다고 늘 상 생각하기. [[ ]]
 
 Logistic Regression에서는 문자형 안되기에, Label Encoding (부호화) 을 해서 숫자로 바꿔줘야한다.
