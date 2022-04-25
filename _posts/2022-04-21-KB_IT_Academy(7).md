@@ -1,5 +1,5 @@
 ---
-title: "데이터 분석을 위한 딥러닝"
+title: "데이터 분석을 위한 딥러닝(DNN)"
 categories:
   - KB 국민은행 IT 아카데미
 feature_text: |
@@ -16,6 +16,10 @@ feature_text: |
 - input_shape에는 튜플 형태로 들어가야함. ex) input_shape=(x_tr.shape[1], ) 
 
 - Dense에서 예측 값이 회귀이면 activation이 linear( linear는 기본값이여서 생략 가능 )이고 마지막 출력은 1 이다.
+
+- Dense에서 이진분류 경우, 마지막 출력은 1, activation = 'sigmoid'
+
+- Dense에서 다항분류의 경우, activation = 'softmax', 마지막 출력은 다수 
 
 - batch_size를 주지않으면 train 데이터를 한꺼번에 읽음
 
@@ -81,7 +85,7 @@ feature_text: |
     - sigmoid
     - tanh
     - ReLUs
-    - Leaky ReLU
+    - Leaky ReLU : max(0, x)
     - Maxout
     - ELU
     - Activation 함수 선택 방법
@@ -172,3 +176,33 @@ feature_text: |
         - path='imdb.npz' 
         - num_word=None: 정수, 고려한 가장 빈번한 단어, 드문 단어는 oov_char로 대체
         - 
+
+
+- Callback
+
+    - 매 batch 때 마다 호출할 함수 전달
+        - model.fit(callbacks=[cb])
+    - tf.keras.callbacks.Callback
+        - callback 생성을 위한 base class, 상속해서 구현
+        - on_train_batch_begin(): 훈련 배치 시작
+        - on_train_batch_end() : 훈련 배치 끝
+        - on_test_batch_begin(): 테스트 배치 시작
+        - on_test_batch_end: 테스트 배치 끝
+
+    - 미리 구현된 Callback 클래스들
+        - tf.keras.callbacks
+            - EarlyStopping
+            - TensorBoard
+            - ModelCheckpoint
+    
+- 다항 분류
+    - 여러 클래스를 분류하는 방법
+        - 각 클래스별 Weight 계산 필요
+        - 이진 분류기를 여러 번 쓰는 것
+        - 하나의 행렬로 계산
+        - 이진 분류기를 여러 번 쓰는 방법에 비해 행렬 연산을 하는 것이 효과적
+    - 범주형 데이터를 숫자로 표현할 방법 필요
+        - One-Hot Encoding
+    - 출력 층 활성화 함수 - Softmax
+        - 여러 클래스에 대한 각각의 H(x)를 확률로 변형 필요
+        - Sigmoid 대신 Softmax 함수 사용
