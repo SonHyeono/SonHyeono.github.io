@@ -36,6 +36,13 @@ answer = [0] * len(id_list)
 
 answer[id_list.index(i.split()[0])] 
 # 이렇게 하면 answer(배열) 원하는 index에 담을 수 있다. 
+
+
+# ---
+
+wd = {'NNG':'일반명사', 'JKS':'주격조사'}
+[(p1, wd.get(p2,'없음')) for p1, p2 in pos]  
+# dictionary를 이용할 때 없을 경우를 대비하고 있으면, get을 이용하면 된다. get(df, ''), 두번째 인자에 대신할 값을 넣어주면 됨.
 ```
 
 
