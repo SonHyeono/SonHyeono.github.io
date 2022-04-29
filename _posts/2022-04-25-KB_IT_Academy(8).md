@@ -12,9 +12,13 @@ feature_text: |
 - [TensorSpace 사이트](https://tensorspace.org/)
 
 
-## 기본 지식
+## 기본 지식  
 
 - 커널 == 필터
+- 합성곱(convolution) : 특징을 뽑아내기
+- 풀링(pooling) : 크기를 줄이기
+- 그림은 Conv2D
+- 문장은 Conv1D
 
 ## CNN
 
@@ -480,8 +484,8 @@ model.summary()
 
 ```python
 import os
-os.environ['KAGGLE_USERNAME'] = 'jaen11487'
-os.environ['KAGGLE_KEY'] = '1e7109f613a54cba533ab49ab46927ff'
+os.environ['KAGGLE_USERNAME'] = 'USERNAME'
+os.environ['KAGGLE_KEY'] = '비밀번호'
 !kaggle competitions download -c dogs-vs-cats
 
 

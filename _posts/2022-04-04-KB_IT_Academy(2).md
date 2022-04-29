@@ -26,6 +26,11 @@ feature_text: |
 
 ```python
 
+# 한글 세팅 방법
+plt.rcParams['font.family'] = "Malgun Gothic"  # 맑은 고딕
+# 한글이 잘 안먹으면 kernel restart
+
+
 # 리스트 차집합
 lst1 = ['A', 'B', 'C', 'D']
 lst2 = ['C', 'D', 'E', 'F']
