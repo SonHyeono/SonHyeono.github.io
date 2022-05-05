@@ -9,6 +9,8 @@ feature_text: |
 
 ## 평가
 
+- [평가 산식들 정리](https://dacon.io/forum/405791?dtype=recent)
+
 ```python
 
 # 학습, 평가 데이터로  R-squared, MSE, MAE 확인

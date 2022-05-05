@@ -89,6 +89,9 @@ reverse_word_index = dict([(value, key) for (key, value) in word_index.items()])
 
 reverse_word_index.get(i-3, '?') # 만약 dictionary에 없을 경우, '?'로 대체
 
+# ----
+df.rename(columns = {"name" :"이름"}, inplace =True) # 열 이름 바꾸기
+
 ```
 
 ## 기본

@@ -1868,7 +1868,9 @@ model.summary()
 # 코드를 실행하세요.
 # 콜백
 es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=4)
+# EarlyStopping은 학습을 하다가 loss가 똑같은 것이 반복이 되면 멈춤
 mc = ModelCheckpoint('best_model.h5', monitor='val_acc', mode='max', verbose=1, save_best_only=True)
+# 모델을 저장
 ```
 
 
