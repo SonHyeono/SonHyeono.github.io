@@ -18,4 +18,4 @@ feature_text: |
 
 수상 사진
 
-![4](https://user-images.githubusercontent.com/26592315/171087594-951fd666-d5db-4d92-a1be-dc3b6652979e.jpg)
+![image](https://user-images.githubusercontent.com/26592315/171657228-6a956325-9113-4ebc-9738-331c514e0658.png)
