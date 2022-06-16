@@ -7,6 +7,11 @@ feature_text: The History of the CodingTest
 
 ## Python
 
+## 인지 할 점
+
+- 문제를 보고 탐색문제인지 빠르게 인지를 하고 재귀를 통해서 빠르게 전부 다 탐색하자.
+- [백트래킹 문제](https://programmers.co.kr/learn/courses/30/lessons/87946)
+
 ## 주의 할 점
 
 - zip 함수를 사용할 때 길이가 다를 경우 가장 짧은 인자를 기준으로 엮이고 나머지는 버려짐.
@@ -53,7 +58,30 @@ print(* sizes)
 # [14, 4] [19, 6] [6, 16] [18, 7] [7, 11] # 이건 이렇게!
 
 
+# ---
 
+# 이차원 배열 중복 제거
+
+d = [[30, 20], [20,20], [40,30], [10,10], [10,10], [30,20]]
+
+d = list(map(list,set(map(tuple,d))))
+print(d)
+
+# [[10, 10], [30, 20], [20, 20], [40, 30]]
+# 일차원 배열은 set을 이용하고 이차원부터는 map을 이용해서 tuple로 변환하여 set해야한다.
+
+#--
+
+queue =  [(i,p) for i,p in enumerate(priorities)]
+# [1, 1, 9, 1, 1, 1] 이거를 아래처럼 만들어준다.
+# [(0, 1), (1, 1), (2, 9), (3, 1), (4, 1), (5, 1)]
+
+
+
+#---
+
+# any() : 리스트에서 하나라도 True인게 있으면 True
+# all() : 리스트 모두 True여야 True 반환
 ```
 
 ## 꿀팁 2
@@ -67,6 +95,8 @@ $Sn$ = $n(a1 + an)\over 2$
 ## Dictionary 이용
 
 ```python
+# key는 같으면 안된다!
+
 answer = []
 a = list(set(report))
 dictionary2 = {name : 0 for name in id_list}
@@ -194,6 +224,11 @@ list(filter(A, B))
 
 check_list = [[0] * n for _ in range(n)]
 # nXn 행렬 만들기
+
+
+
+
+
 ```
 
 ## Asterisk(\*)

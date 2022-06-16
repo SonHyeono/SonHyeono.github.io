@@ -2,11 +2,12 @@
 title: Portfolio
 ---
 
-<!-- feature_text: |
-  ## Who am i?
-  Hi, I'm SonHyeono
-feature_image: "https://picsum.photos/1300/400?image=989"
- -->
+feature_text: |
+
+  <!-- ## Who am i?
+  Hi, I'm SonHyeono -->
+
+feature_image: "![1](https://user-images.githubusercontent.com/26592315/174086286-54f486c6-d482-4787-ae29-99f78a9b8029.jpg)"
 
 ## 🚀 Project
 
