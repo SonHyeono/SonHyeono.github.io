@@ -11,6 +11,7 @@ feature_text: The History of the CodingTest
 
 - 문제를 보고 탐색문제인지 빠르게 인지를 하고 재귀를 통해서 빠르게 전부 다 탐색하자.
 - [백트래킹 문제](https://programmers.co.kr/learn/courses/30/lessons/87946)
+- 주어진 배열을 복사한 배열의 원본을 건드리지 말자. 원본이 바뀔우려가 있기에 새로운 배열을 선언후 append하는 형식으로 가야지 원본 주소를 건드는 실수를 안한다.
 
 ## 주의 할 점
 
@@ -60,7 +61,7 @@ print(* sizes)
 
 # ---
 
-# 이차원 배열 중복 제거
+# 이차원 배열 중복 제거 ( 이차원 배열 중복 제거 할때에는 각 원소에 대해서 정렬먼저 한번 하고 하자)
 
 d = [[30, 20], [20,20], [40,30], [10,10], [10,10], [30,20]]
 
@@ -187,6 +188,130 @@ v = [list(range(10)),[10,11,12]]
 [j for j in i for i in v ]
 # 이렇게 하면 NameError: name 'i' is not defined 에러남. 즉, for문이 두개 일때는 먼저 해야하는 것이 앞으로 가야한다. (실제로 풀어 쓸 때랑 마찬가지로)
 ```
+
+## 문자열
+
+- 변수 이름에 str 금지
+- 변수 이름 선언 할 때 snake case로 붙이기 (ex 변수\_변수 )
+- 정규표현식 import re 보다 replace가 훨씬 빠름. str.replace("","").replace("","") 가능
+
+```python
+
+# 꿀팁
+
+res = max(res, palindrome(len(data), i, i+1), palindrome(len(data), i, i+2), key=len)
+# max에서 key = len을 하면 가장 길이가 긴 값을 선택한다. 그래서 가장 긴 문자열이 res에 담긴다.
+
+snake_case = "snake case"
+
+
+print(list(snake_case))
+# ['s', 'n', 'a', 'k', 'e', ' ', 'c', 'a', 's', 'e']
+
+snake_case_list = ["snake","case"]
+
+print(" ".join(snake_case_list))
+# "snake case"
+
+print("".join(snake_case_list))
+# "snakecase"
+
+# 영어인지 확인할 땐 문자열.isalpha()
+snake_case[0].isalpha()
+# True
+
+# 숫자인지 확인할 땐 문자열.isdigit()
+snake_case[0].isdigit()
+# False
+
+# isalnum()  :  영문자, 숫자 여부를 판별하여, 영문자와 숫자가 아니면 False를 리턴한다.
+snake_case[0].isalnum()
+# True
+
+# 소문자인지 확인할 떈 문자열.islower()
+snake_case[0].islower()
+# True
+
+# 대문자인지 확인할 땐 문자열.isupper()
+snake_case[0].isupper()
+# False
+
+# 소문자로 변경 할 때는 문자열.lower()
+snake_case[0].lower()
+
+# 대문자로 변경할 때는 문자열.upper()
+snake_case[0].upper()
+
+# 문자열 내에서 특정 문자 찾기 => find()
+# 찾으면 (시작하는)해당 위치를, 찾지 못하면 -1을 반환한다.
+
+snake = "snake"
+print(snake.find("s"))
+# 0
+print(snake.find("j"))
+# -1
+
+
+# 문자열 내에서 특정한 문자 제거하기
+# 문자열.replace(바뀔문자, 바꿀문자)
+print(snake.replace("sn", "snsn"))
+# snsnake
+# 또 다른 방식으로 re.sub 정규식을 이용하는 방법도 있음.
+
+# re.sub(바꿀문자규칙, 이렇게바꾼다, 문자열)
+# import re 해야함.
+ qw12 = "q-w1-2!!!_굳굳"
+qw12 = re.sub('[^a-zA-Z0-9]','',qw12)
+
+#  위의 [ ] 안에서 규칙이 생긴다. ^는 '이것들 빼고', a-z 는 a에서 z까지, A-Z는 A에서Z까지, 0-9는 0에서 9까지 라는 뜻.
+# 총합하면 a에서z까지랑 A에서Z까지랑 0에서9까지랑 제외하고는 죄다 바꿈.
+
+print(qw12)
+# qw12
+
+
+# ---
+
+str = 'aaa-bbb-ccc'
+
+print(str.startswith('aaa'))
+# True
+
+print(str.endswith('ccc'))
+# True
+
+#---
+
+# 문자열 유형 참고 2 ( 참고 주소는 python 코드 아래 )
+
+# 가장 긴 팰린드롬 찾기
+
+def palindrome(n, left, right):
+    while right <= len(data) and left >= 0 and data[left] == data[right - 1]:
+        right += 1
+        left -= 1
+    return data[left + 1: right - 1]
+
+
+data = 'ewqpbewqbfjabcdefedcbaienqnfkndkl'
+# data = 'abbc'
+res = ''
+if data == data[::-1] or len(data) < 2:
+    print(data)
+else:
+    for i in range(len(data) - 1):
+        res = max(res, palindrome(len(data), i, i + 1), palindrome(len(data), i, i + 2), key=len)
+    print(res)
+
+# 이때 투포인터를 이용했고 가장 중요한 점은 가장 긴 팰린드롬을 찾기 위해서는 중심점을 찾는 것이 핵심! 그래서 중심점을 찾고 투 포인터가 돌면서 같은지 확인 하는 알고리즘!
+
+
+```
+
+- [문자열 유형 참고 1 ](https://han-py.tistory.com/331)
+- [문자열 유형 참고 2 ](https://han-py.tistory.com/334)
+
+---
 
 ## map , filter
 
