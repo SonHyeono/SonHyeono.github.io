@@ -6,8 +6,6 @@ feature_text: |
   The History of the KB 국민은행 IT 아카데미 IT's Your Life
 ---
 
-
-
 - [기본 데이터](#기본-데이터)
 
 - [결측치](#결측치)
@@ -40,7 +38,7 @@ complement = list(set(lst1).difference(lst2))
 print( complement ) # ['A', 'B']
 
 # 에러 끄기
-pd.set_option('mode.chained_assignment',  None) 
+pd.set_option('mode.chained_assignment',  None)
 
 # 열 별 고윳값 수 확인
 df.nunique()
@@ -85,7 +83,7 @@ df['hour'] = df['timestamp'].dt.hour
 
 reverse_word_index = dict([(value, key) for (key, value) in word_index.items()])
 # ***(꿀팁)***
-# 만약 word_index( dictionary )의 key, value의 위치를 바꾸고 싶을 때 하는 법 
+# 만약 word_index( dictionary )의 key, value의 위치를 바꾸고 싶을 때 하는 법
 
 reverse_word_index.get(i-3, '?') # 만약 dictionary에 없을 경우, '?'로 대체
 
@@ -96,8 +94,7 @@ df.rename(columns = {"name" :"이름"}, inplace =True) # 열 이름 바꾸기
 
 ## 기본
 
-
-- 컬럼의 범위를 줘서 뽑아내고 싶으면 df.loc[: , "plcass" : "sex"] , loc를 이용한 범위 추출을 줄 수 있고, fancy indexing으로도 가능. 
+- 컬럼의 범위를 줘서 뽑아내고 싶으면 df.loc[: , "plcass" : "sex"] , loc를 이용한 범위 추출을 줄 수 있고, fancy indexing으로도 가능.
 - delimiter나 sep로 구분자를 설정해서 pd.read 가능
 - df.['col'] 하면 Series가 나오고
 - df.[['col']] 하면 DataFrame으로 나온다. (즉, list에 담으면 DataFrame 형태)
@@ -113,10 +110,10 @@ df.rename(columns = {"name" :"이름"}, inplace =True) # 열 이름 바꾸기
 - DataFrame에서 변경을 할 때 DataFrame.loc[] 에 값을 넣어야한다~ 그 행을 찾아서 넣기
 - sort_values에서 Series( [] )면 컬럼을 안줘도 되지만 DataFrame( [[]] )이면 컬럼을 by로 꼭 줘야한다.
 
-## 기본 데이터 
+## 기본 데이터
 
 ```python
-# 타이타닉 데이터 
+# 타이타닉 데이터
 # 1. 함수로 뽑기
 import seaborn as sns
 sns.load_dataset("titanic")
@@ -153,7 +150,7 @@ apt_price = pd.read_csv(
 df.info() # 정보 확인
 df.columns # 열 확인
 df.head()  # 데이터 상위 확인, tail은 하위
-df.describe() # 요약 통계 
+df.describe() # 요약 통계
 df['columns 명'].value_counts() # 개별 컬럼별로 각각의 값의 횟수
 df['columns 명'].quantile() # 분위, 동등한 크기로 분할하는 지점 .quantile(0.8) 이면 80%
 df['columns 명'].mode()[0] # 최빈값 뽑기
@@ -162,7 +159,7 @@ df['columns'] = True # 새로운 컬럼 추가 (임의의 값을 대입해서 �
 apt_price["평"] = apt_price["전용면적(㎡)"] / 3.03 # 새로운 컬럼 추가 예시
 
 df_copy = df.copy() # 복사본 만들기
-df.corr()   # 상관관계, -1에 가까울수록 반비례 관계, 1에 가까울수록 정비례 관계 
+df.corr()   # 상관관계, -1에 가까울수록 반비례 관계, 1에 가까울수록 정비례 관계
 df.corr()["survived"] # Series로 해당하는 열에 관한 다른 열과의 상관관계
 df.corr()[["survived"]] # DataFrame으로 해당하는 열에 관한 다른 열과의 상관관계
 
@@ -180,8 +177,8 @@ df.shape() # 데이터의 (행, 열) 크기
 df['age'].unique() # 열에서 유일한 값
 
 b = titanic['who'] == 'child'
-titanic[b].count() # who 컬럼에서 child 인 행의 개수 
-# titanic.loc[b, 'who'].count()   # 위의 조건에서 who 컬럼의 개수만 구하기  
+titanic[b].count() # who 컬럼에서 child 인 행의 개수
+# titanic.loc[b, 'who'].count()   # 위의 조건에서 who 컬럼의 개수만 구하기
 
 #데이터 삭제
 titanic.drop(titanic.index[titanic[titanic['sex'] == 'male'].index]) # 남성인 데이터 삭제하기, male인 index를 지우기
@@ -192,7 +189,7 @@ df.drop('class', axis=1)
 df.drop(['first', 'second'], axis=1) # 열 여러개 삭제
 
 # e notation 표현 방식 변경
-pd.options.display.float_format = '{:..2f}'.format 
+pd.options.display.float_format = '{:..2f}'.format
 
 
 # split한 값을 이용하고 싶으면 항상 str로 접근해야한다. str[1]을 하면 분할 된것들의 1번째 값들이 다 나온다.
@@ -208,7 +205,7 @@ apt_price["시군구"].str.split().str[1]
 df.isnull()
 df.isna()
 df.notnull()
-df.fillna(10)  # 결측치에 ()괄호안의 값으로 채워넣음. ex) 열의 평균을 구하고 그 값을 채워넣기 
+df.fillna(10)  # 결측치에 ()괄호안의 값으로 채워넣음. ex) 열의 평균을 구하고 그 값을 채워넣기
 df.fillna(10, inplace=True)  # 원본에 반영시키는 방법 : 1. inplace 속성을 True로 해주기 2. 값을 덮어씌우기
 df.dropna()  # 결측치 제거하기, any가 기본이고 any(nan이 1개라도 존재시 drop), all(모두 nan이면 drop)
 
@@ -229,37 +226,35 @@ age_na_idx
 ## 원하는 행 뽑기( 특정문자로 찾기 )
 
 ```python
-b = df["행정구역"].str.contains("면")  
-#  내가 원하는 값이 들어가 있는 행 뽑을 때 쓰는 방법! 
+b = df["행정구역"].str.contains("면")
+#  내가 원하는 값이 들어가 있는 행 뽑을 때 쓰는 방법!
 df[b]
 ```
 
 ## sum
 
 ```python
-sum() 
-np.sum()  # sum 보다 컴파일 시간이 빠르다. ( numpy가 C기반의 라이브러리 ) 
-np.cumsum() # np.sum과 비슷하고 축에 따라서 누적 합계   
+sum()
+np.sum()  # sum 보다 컴파일 시간이 빠르다. ( numpy가 C기반의 라이브러리 )
+np.cumsum() # np.sum과 비슷하고 축에 따라서 누적 합계
 
 # 제일 빠르고 강력한 sum은 CPU 병렬화 or GPU 병렬화 이다.
 ```
 
-
 ## where
 
 - numpy.where()
-    `np.where(조건, 참, 거짓)`
-    ```python
-    df['predict'] = np.where(df['predict'] == -1, 1, 0)
-    ```
+  `np.where(조건, 참, 거짓)`
+
+  ```python
+  df['predict'] = np.where(df['predict'] == -1, 1, 0)
+  ```
 
 - pandas.where()
 
-    `df.where(cond, other=nan, inplace=False, axis=None, level=None, errors='raise',try_cast=False)`
-    
-    `df.where(조건, 조건이 거짓일 경우 대체 값, 원본을 수정할 것인가?(inplace) ... )`
+  `df.where(cond, other=nan, inplace=False, axis=None, level=None, errors='raise',try_cast=False)`
 
-
+  `df.where(조건, 조건이 거짓일 경우 대체 값, 원본을 수정할 것인가?(inplace) ... )`
 
 ## Series
 
@@ -275,7 +270,7 @@ apt_price["시군구"].str.split()  # Series 항목별로 split()을 하기 위�
 
 ## datetime
 
-- ***datetime 타입에서는 dt 접근자로 날짜 속성에 접근 가능***
+- **_datetime 타입에서는 dt 접근자로 날짜 속성에 접근 가능_**
 
 ```python
 # datetime 타입에서는 dt 접근자로 날짜 속성에 접근 가능
@@ -303,17 +298,17 @@ apt_price["평형"] = pd.cut(
     bins=[0,10,20,30,40,50,60,1000], # 구간경계값
     labels=['10평이하', '10평대', '20평대', '30평대', '40평대', '50평대','50평이상']
 )
-# Series 형식으로 나오기에 새로운 컬럼에 더한다. 
+# Series 형식으로 나오기에 새로운 컬럼에 더한다.
 
-apt_price["평형"].value_counts() # 평수대로 개수가 나온다.  
+apt_price["평형"].value_counts() # 평수대로 개수가 나온다.
 
 ```
 
 ## groupby
 
-- ***연속형일 경우는 cut으로 잘라서 범주형으로 바꾸고 groupby를 지어야한다.***
+- **_연속형일 경우는 cut으로 잘라서 범주형으로 바꾸고 groupby를 지어야한다._**
 
-- ***계층적 index가 편하다.***
+- **_계층적 index가 편하다._**
 
 ```python
 df.groupby("columns 명")  # 컬럼을 기준으로 group을 지어준다.
@@ -331,7 +326,7 @@ titanic.groupby(['sex','pclass'])['survived'].mean()
 
 titanic.groupby(["sex","pclass"])[["survived","age"]].mean() # 선택할 열이 여러개면 [[]] 로 묶기
 
-# 여러가지 통계 값을 적용할 때는 agg()를 사용! 
+# 여러가지 통계 값을 적용할 때는 agg()를 사용!
 titanic.groupby(["sex","pclass"])[["survived","age"]].agg(["mean","max"])
 
 
@@ -339,8 +334,7 @@ titanic.groupby(["sex","pclass"])[["survived","age"]].agg(["mean","max"])
 
 ![image](https://user-images.githubusercontent.com/26592315/161486642-6fd8d5f4-5f0a-4ff3-8064-cee82abbd219.png){: width="100%" height="100%"}{: .center}
 
-![image](https://user-images.githubusercontent.com/26592315/161489191-8ce0f713-5b8e-41a9-af7f-0168bc5c50ae.png){: width="100%" height="100%"}{: .center}    
-
+![image](https://user-images.githubusercontent.com/26592315/161489191-8ce0f713-5b8e-41a9-af7f-0168bc5c50ae.png){: width="100%" height="100%"}{: .center}
 
 ## pivot_table
 
@@ -357,7 +351,6 @@ df.pivot_talbe(index="column", columns="column", values="", aggfunc=['sum','mean
 
 ```
 
-
 ## apply
 
 ```python
@@ -369,7 +362,7 @@ def f1(x):
     if x=="man": return "남자"
     elif x=="woman": return "여자"
     elif x=="child": return "아이"
-    
+
 titanic['who'].apply(f1)
 
 '''
@@ -392,8 +385,8 @@ Name: who, Length: 891, dtype: object
 
 
 # 데이터 양이 많을 경우  apply를 이용하면 한번만 훑는다.
-def get_date(x):                        
-    return x[0:4] + x[6:8] + x[9:11] 
+def get_date(x):
+    return x[0:4] + x[6:8] + x[9:11]
 w["날짜"].apply(get_date)
 
 ```
@@ -431,13 +424,13 @@ pd.merge(score1, score2, left_on="이름",right_on="학생이름")
 pd.merge(score1, score2, on="이름")
 
 ```
-## lambda
 
+## lambda
 
 ```python
 
 titanic['who'].apply(
-    lambda x: "남자" if x=="man" else 
+    lambda x: "남자" if x=="man" else
     "여자" if x=="woman" else "아이").value_counts()
 ```
 
@@ -447,17 +440,3 @@ titanic['who'].apply(
 pd.read_html(url) # url의 table을 뽑아내진다. (웹사이트 마다 헤더가 필요한 경우도 있다. )
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
