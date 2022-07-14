@@ -83,6 +83,16 @@ queue =  [(i,p) for i,p in enumerate(priorities)]
 
 # any() : 리스트에서 하나라도 True인게 있으면 True
 # all() : 리스트 모두 True여야 True 반환
+
+
+# swap 하기
+# 변수든 list이든
+a, b = b, a # 이렇게 하면 swap이 된다.
+
+
+# 여러개 입력 받을 때 list에 저장 하기
+a = list(map(int, input().split()))
+# [3, 6, -7, 5, 4]
 ```
 
 ## 꿀팁 2
@@ -305,6 +315,18 @@ else:
 
 # 이때 투포인터를 이용했고 가장 중요한 점은 가장 긴 팰린드롬을 찾기 위해서는 중심점을 찾는 것이 핵심! 그래서 중심점을 찾고 투 포인터가 돌면서 같은지 확인 하는 알고리즘!
 
+
+
+list(s)
+# list를 씌우면 [i for i in s] 랑 같은 효과, split 해줌.
+# 또는 sort도 해야하는 경우면 sorted(s)를 하게 되면 split도 하면서 정렬도 된 list를 반환한다.
+
+
+for j in a:
+    answer += j
+# 이렇게 배열을 문자열로 합칠 때에는
+''.join(a)
+# 이렇게 join을 활용해서 합치자.
 
 ```
 
