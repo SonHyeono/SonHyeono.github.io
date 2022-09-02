@@ -59,6 +59,8 @@ label_encoded = le.transform(label)
 df['primary_use'] = pd.DataFrame(label_encoded, columns=['label_encoded'])
 
 # sns로 barplot
+import seaborn as sns
+
 sns.barplot(x='cloud_coverage', y='meter_reading',data=df3)
 plt.xticks(rotation=45) # x축 기울기 조절
 plt.show()
@@ -364,6 +366,8 @@ def f1(x):
     elif x=="child": return "아이"
 
 titanic['who'].apply(f1)
+titanic['who'].apply(lambda x: f1(x))
+
 
 '''
 0      남자

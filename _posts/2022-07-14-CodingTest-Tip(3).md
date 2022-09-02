@@ -20,6 +20,17 @@ for i in cb(nums, 3):
         # (2, 3, 4)     이렇게 튜플형식으로 나옴.
 # cb(nums,3)을 바로 이용하기는 어려움. 왜냐면 itertools이기에 for문을 이용하여 값을 뽑아내야 함.
 
+#-------
+# if else문을 줄이는 법
+
+if num % 2:
+    num = num * 3 + 1
+else:
+    num /= 2
+# 위의 것을 아래 줄 처럼 줄일 수 있다.
+num = num / 2 if num % 2 == 0 else num*3 + 1
+# -----------
+
 ```
 
 ## for else 문
@@ -70,4 +81,64 @@ def isPrime(x):
 # 만약 해당 약수의 개수가 홀수인지 짝수인지 판별하는 경우
 if int(i**0.5)==i**0.5:
 # 다음과 같이 루트가 정수라면 홀수개이다.
+```
+
+## lambda 식
+
+- map을 활용!
+- join을 활용!
+
+```python
+" ".join(map(lambda x: "".join([a.lower() if i % 2 else a.upper() for i, a in enumerate(x)]), s.split(" ")))
+# 이것 처럼 map을 활용해서 lambda x를 s라는 배열에 적용한다.
+# 이때 s.split(" ")은 공백으로 split한 배열이고, " ".join을 통해 다시 배열들 사이에 공백으로 이어지게 함.
+
+```
+
+## split
+
+- 문제를 잘 읽기(하나이상의 공백이 있을 수 있기에 " " 와 ( )를 구분하기! )
+- (" ")와 ()를 구분 할 것!
+
+- 문자열을 split() 했을 때 숫자의 경우는 문자열이기에 대소 비교할때 int()로 치환해야함.
+
+```python
+# >>> s = " A  B "
+# >>> s.split()
+['A', 'B']
+# >>> s.split(" ")
+['', 'A', '', 'B', '']
+# split에 " "를 하면 " "을 인식해서 띄운다.
+
+
+m = "pizza 200"
+m_ = m.split()
+if int(m_[1]) > 30
+# 이렇게 해야함. split한경우 int로 다시 치환
+```
+
+## reverse
+
+- list에 0
+
+```python
+#	[1, 2, 0, 0]
+p.sort(reverse=True)
+# [2, 1, 0 , 0] 이 됨.
+# 그렇기에
+ p = p[::-1]
+ # 이렇게 해야지  [0, 0, 2, 1] 제대로 뒤집어짐!
+
+```
+
+## 진법
+
+```python
+while n:
+    tmp += str(n % base)
+    n = n // base
+# n이라는 10진법 수를 base 진법으로 변환(대신 거꾸로 임)
+
+answer = int(tmp, base)
+# int의 기능으로는 base 진법으로 구성된 str 형식의 tmp를 10진법으로 변환해줌
 ```
