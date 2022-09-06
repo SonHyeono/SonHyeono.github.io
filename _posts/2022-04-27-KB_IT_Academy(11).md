@@ -2,7 +2,7 @@
 title: "데이터 분석을 위한 딥러닝 RNN(네이버_쇼핑_리뷰_감성_분류)"
 layout: post
 date: 2022-04-27 19:54:00 +0900
-category: KB 국민은행 IT 아카데미
+category: KB(Bank)-IT-Academy
 ---
 
 ## RNN으로 네이버 쇼핑 리뷰 감성 분류

@@ -2,7 +2,7 @@
 title: "데이터 분석을 위한 머신러닝 (2)"
 layout: post
 date: 2022-04-14 22:03:00 +0900
-category: KB 국민은행 IT 아카데미
+category: KB(Bank)-IT-Academy
 ---
 
 ## 평가

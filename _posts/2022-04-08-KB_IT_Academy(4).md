@@ -2,7 +2,7 @@
 title: "국민건강보험공단_건강검진정보 데이터 분석"
 layout: post
 date: 2022-04-08 18:29:00 +0900
-category: KB 국민은행 IT 아카데미
+category: KB(Bank)-IT-Academy
 ---
 
 - 국민건강보험공단\_건강검진정보\_2021_12 분석

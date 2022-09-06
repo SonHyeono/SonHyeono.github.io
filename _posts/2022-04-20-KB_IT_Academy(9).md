@@ -2,7 +2,7 @@
 title: "KOVO 한국배구연맹 V 리그 예측"
 layout: post
 date: 2022-04-20 22:46:00 +0900
-category: KB 국민은행 IT 아카데미
+category: KB(Bank)-IT-Academy
 ---
 
 - ## 프로젝트 설명

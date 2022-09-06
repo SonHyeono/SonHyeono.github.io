@@ -2,7 +2,7 @@
 title: "데이터 분석을 위한 딥러닝(CNN)"
 layout: post
 date: 2022-04-25 19:33:00 +0900
-category: KB 국민은행 IT 아카데미
+category: KB(Bank)-IT-Academy
 ---
 
 ## 참고

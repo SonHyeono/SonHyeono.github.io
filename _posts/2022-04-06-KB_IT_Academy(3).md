@@ -2,7 +2,7 @@
 title: "아파트(매매)실거래가를 이용한 데이터 시각화"
 layout: post
 date: 2022-04-06 19:34:00 +0900
-category: KB 국민은행 IT 아카데미
+category: KB(Bank)-IT-Academy
 ---
 
 - x축 값과 y축 값의 scale을 꼭 봐야한다. ( scale을 맞추기 위해 Limitation을 이용 )

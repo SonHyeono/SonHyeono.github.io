@@ -2,7 +2,7 @@
 title: "Numpy와 Pandas 기본"
 layout: post
 date: 2022-04-04 21:39:00 +0900
-category: KB 국민은행 IT 아카데미
+category: KB(Bank)-IT-Academy
 ---
 
 - [기본 데이터](#기본-데이터)
