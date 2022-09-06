@@ -2,7 +2,7 @@
 title: "자동 투자 Start!"
 layout: post
 date: 2022-01-28 22:01:00 +0900
-category: Auto Investment
+category: Auto-Investment
 ---
 
 ## 자동 투자 API

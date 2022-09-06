@@ -2,7 +2,7 @@
 title: "Slack을 이용해서 bot과 소통!"
 layout: post
 date: 2022-02-04 19:53:00 +0900
-category: Auto Investment
+category: Auto-Investment
 ---
 
 ## Slack

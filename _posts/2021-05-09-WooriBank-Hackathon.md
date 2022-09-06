@@ -9,7 +9,7 @@ category: Hackathon
 
 # 서류 합격
 
-![WooriBankHack](https://user-images.githubusercontent.com/26592315/150896488-7b84ee39-4f42-4da7-9cfe-374b103b4acd.png){: width="50%" height="50%"}{: .center}
+![WooriBankHack](https://user-images.githubusercontent.com/26592315/150896488-7b84ee39-4f42-4da7-9cfe-374b103b4acd.png)
 
 ## 프로그램 명칭
 
@@ -84,7 +84,7 @@ WibeeRich
 
 우리은행 홈페이지에서 거래내역조회를 뽑게 되면 기재내용으로 나오는 TRN_TXT string이 온전하게 나오는 것이 아닌, 잘려서 나오기에 정확도를 높이는 데 한계가 있었습니다.
 
-![image](https://user-images.githubusercontent.com/26592315/150895397-0d059a92-b5d3-4d3c-bb02-0af3e351846b.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/150895397-0d059a92-b5d3-4d3c-bb02-0af3e351846b.png)
 
 - 정확도의 경우는 83% 정도이며 지금까지 설명한 분류 방법이 외에도 검색에 있어서 정확성을 높이기 위해 String에서 유효한 값으로 분할 혹은 재조합으로 검색을 하거나 검색해서 나온 키워드의 정확성을 높이는 방법으로 현재의 정확도를 높일 수 있을 것 같습니다.
 
