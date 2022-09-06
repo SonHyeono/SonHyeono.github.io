@@ -2,7 +2,7 @@
 title: "Data Analyst 기본기"
 layout: post
 date: 2022-07-10 19:58:00 +0900
-category: Data Analyst
+category: Data-Analyst
 ---
 
 # Data Analyst 기본기

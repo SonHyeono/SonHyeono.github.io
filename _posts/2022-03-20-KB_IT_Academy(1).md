@@ -11,15 +11,15 @@ category: KB 국민은행 IT 아카데미
 
 ---
 
-![image](https://user-images.githubusercontent.com/26592315/159148444-0812b371-c475-4cff-82f9-c204e8c261b8.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/159148444-0812b371-c475-4cff-82f9-c204e8c261b8.png)
 
-![image](https://user-images.githubusercontent.com/26592315/159148963-f39bd0b8-13ab-4bd5-9036-2e4a4c0ef340.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/159148963-f39bd0b8-13ab-4bd5-9036-2e4a4c0ef340.png)
 
-![image](https://user-images.githubusercontent.com/26592315/159148969-a0e83b95-fd5e-4e90-9e2d-ec9b714eecb8.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/159148969-a0e83b95-fd5e-4e90-9e2d-ec9b714eecb8.png)
 
-![image](https://user-images.githubusercontent.com/26592315/159148974-7e7413af-a8e6-450d-96d3-f6784923c4d8.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/159148974-7e7413af-a8e6-450d-96d3-f6784923c4d8.png)
 
-![image](https://user-images.githubusercontent.com/26592315/159148977-487abf39-87fd-4168-8324-add026bad37c.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/159148977-487abf39-87fd-4168-8324-add026bad37c.png)
 
 ---
 

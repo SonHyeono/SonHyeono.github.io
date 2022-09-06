@@ -34,7 +34,7 @@ post_message(myToken, "#<채널명>", "Hi~")
 
 위와 같이 코드를 실행하게 되면,
 
-![image](https://user-images.githubusercontent.com/26592315/152376980-d3577ed4-98dc-4a6d-ada8-c765960cfd4c.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/152376980-d3577ed4-98dc-4a6d-ada8-c765960cfd4c.png)
 
 slack으로 메세지가 오는 것을 확인할 수 있다.
 
@@ -44,7 +44,7 @@ slack으로 메세지가 오는 것을 확인할 수 있다.
 2. [slack-api](https://api.slack.com/)에서 bot(app) 만들기 (1번에서 만든 워크스페이스 이용)
 3. slack-api의 OAuth & Permissions 에서 chat:write 권한 부여하기
 
-![image](https://user-images.githubusercontent.com/26592315/152378491-06982379-1f10-4b70-bc30-7d9fb33737eb.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/152378491-06982379-1f10-4b70-bc30-7d9fb33737eb.png)
 
 마지막으로 slack-api에서 install 해서 token 부여받기
 

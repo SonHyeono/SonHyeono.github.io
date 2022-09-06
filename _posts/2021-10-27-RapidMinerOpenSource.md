@@ -9,7 +9,7 @@ category: Intern
 
 ##### 1. [rapidminer-studio](https://github.com/rapidminer/rapidminer-studio) 오픈소스 다운 받기
 
-![opensource_error](https://user-images.githubusercontent.com/26592315/138993527-3b58cd1c-16eb-4c21-b5a1-ff7c4e87fdaf.png){: width="100%" height="100%"}{: .center}
+![opensource_error](https://user-images.githubusercontent.com/26592315/138993527-3b58cd1c-16eb-4c21-b5a1-ff7c4e87fdaf.png)
 
 > - 굉장히 많은 Error들이......
 
@@ -26,13 +26,13 @@ category: Intern
 
 ---
 
-![opensource_error2](https://user-images.githubusercontent.com/26592315/138994793-d1e847f0-1f04-40fc-8106-e02fac535c43.png){: width="100%" height="100%"}{: .center}
+![opensource_error2](https://user-images.githubusercontent.com/26592315/138994793-d1e847f0-1f04-40fc-8106-e02fac535c43.png)
 
 - 위의 사진처럼 System library를 default로 설정
 
 ---
 
-![opensource_error3](https://user-images.githubusercontent.com/26592315/138995306-342532bb-89af-4c91-923a-05e5ff9a378c.jpg){: width="100%" height="100%"}{: .center}
+![opensource_error3](https://user-images.githubusercontent.com/26592315/138995306-342532bb-89af-4c91-923a-05e5ff9a378c.jpg)
 
 - 프로젝트 우클릭 -> Import -> Gradle Project에서 해당 폴더로 설정하기
 
@@ -40,7 +40,7 @@ category: Intern
 
 ##### 3. Run
 
-![opensource](https://user-images.githubusercontent.com/26592315/138995588-75f92b48-e2b6-4d26-b3d1-1f355f21df7f.png){: width="100%" height="100%"}{: .center}
+![opensource](https://user-images.githubusercontent.com/26592315/138995588-75f92b48-e2b6-4d26-b3d1-1f355f21df7f.png)
 
 - GUILauncher 클래스 생성
 
@@ -62,7 +62,7 @@ class GUILauncher {
 
 ##### 4. 공개SW 버전 빌드
 
-![opensource2](https://user-images.githubusercontent.com/26592315/138995750-1b147ebd-532e-4802-8d2c-8c58f8a79ef9.png){: width="100%" height="100%"}{: .center}
+![opensource2](https://user-images.githubusercontent.com/26592315/138995750-1b147ebd-532e-4802-8d2c-8c58f8a79ef9.png)
 
 - 다음과 같이 실행이 되고 특징으로는
   > - Read CSV, 기본적으로 제공되는 Data Mining tool 등을 모두 사용 가능

@@ -71,8 +71,9 @@ build.gradle
 
 /.m2/repository/org/jnetpcap/jnetpcap 안의 파일을 아래의 사진과 같이 배치
 
-![jnetpcap-file2](https://user-images.githubusercontent.com/26592315/138590272-7d31ead8-1690-4ad7-9b63-4b216993e12d.png){: width="100%" height="100%"}{: .center}
-![jnetpcap-file1](https://user-images.githubusercontent.com/26592315/138590285-a20a4d3a-d1b3-4e07-8e71-55f6b2c67099.png){: width="100%" height="100%"}{: .center}
+![jnetpcap-file2](https://user-images.githubusercontent.com/26592315/138590272-7d31ead8-1690-4ad7-9b63-4b216993e12d.png)
+
+![jnetpcap-file1](https://user-images.githubusercontent.com/26592315/138590285-a20a4d3a-d1b3-4e07-8e71-55f6b2c67099.png)
 
 (위에서 1.4.r1425파일 안은 jnetpcap-1.4.r1425-1.win64를 압축 풀고 나온 파일들을 집어넣고 그안에서 jnetpcap.jar 파일명을 jnetpcap-1.4.r1425으로 바꾼 형태, 그 외에 파일 안에 추가된 파일들은 실행하면서 생긴 파일들)
 
@@ -82,7 +83,7 @@ build.gradle
 
 > > 프로젝트 우클릭 -> Build path -> configure build path
 
-![image](https://user-images.githubusercontent.com/26592315/138590360-19463c35-93a7-40af-91f0-832bae9d8ab8.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/138590360-19463c35-93a7-40af-91f0-832bae9d8ab8.png)
 
 - Source attachment 클릭후에 Edit -> 아까 jnetpcap 파일 안에 넣어둔 src zip 파일을 클릭
 - Javadoc location 클릭 후에 Edit -> 아까 jnetpcap 파일 안에 넣어둔 javadoc zip 파일 클릭
@@ -92,7 +93,7 @@ build.gradle
 #### 2. CICFlowMeter 실행 해보기
 
 - App.java를 Run하면 pcap 데이터를 csv 파일로 변환 및 저장
-  ![jnetpcap-file3](https://user-images.githubusercontent.com/26592315/138590723-09fb6122-ca7b-485e-bd20-82c945c3208a.png){: width="100%" height="100%"}{: .center}
+  ![jnetpcap-file3](https://user-images.githubusercontent.com/26592315/138590723-09fb6122-ca7b-485e-bd20-82c945c3208a.png)
 
 ---
 

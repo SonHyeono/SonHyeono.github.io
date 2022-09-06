@@ -333,9 +333,9 @@ titanic.groupby(["sex","pclass"])[["survived","age"]].agg(["mean","max"])
 
 ```
 
-![image](https://user-images.githubusercontent.com/26592315/161486642-6fd8d5f4-5f0a-4ff3-8064-cee82abbd219.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/161486642-6fd8d5f4-5f0a-4ff3-8064-cee82abbd219.png)
 
-![image](https://user-images.githubusercontent.com/26592315/161489191-8ce0f713-5b8e-41a9-af7f-0168bc5c50ae.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/161489191-8ce0f713-5b8e-41a9-af7f-0168bc5c50ae.png)
 
 ## pivot_table
 

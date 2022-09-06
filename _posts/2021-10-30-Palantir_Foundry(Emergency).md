@@ -7,7 +7,7 @@ category: Intern
 
 #### 긴급 소식...
 
-![Emergency](https://user-images.githubusercontent.com/26592315/139520639-b52c782a-61bd-407f-a901-5270ad13eec7.jpg){:width="40%" height="40%"}{: .center}
+![Emergency](https://user-images.githubusercontent.com/26592315/139520639-b52c782a-61bd-407f-a901-5270ad13eec7.jpg)
 
 > - ......한달 동안 논문 보면서 생소한 PCAP 데이터를 공부하고 있었는데 이게 무슨 날벼락인가... 나중에 회사가면 이런 일이 생길 수 도 있으니 전화위복이라고 생각하자..
 

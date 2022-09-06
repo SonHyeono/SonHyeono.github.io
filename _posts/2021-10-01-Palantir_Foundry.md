@@ -54,7 +54,7 @@ category: Intern
 
 ### 기업과 Palantir Foundry와의 협업 사례
 
-![image](https://user-images.githubusercontent.com/26592315/135643248-b94b8ffc-e906-4424-a5ef-a6e032761781.png){: width="100%" height="100%"}{: .center}
+![image](https://user-images.githubusercontent.com/26592315/135643248-b94b8ffc-e906-4424-a5ef-a6e032761781.png)
 
 - EX) [두산 인프라코어](https://www.youtube.com/watch?v=S7st0QER5So&t=213s)
 

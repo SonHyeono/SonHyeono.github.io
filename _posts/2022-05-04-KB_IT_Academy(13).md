@@ -1,4 +1,4 @@
----
+---역행
 title: "KB 국민은행 AI 행원 체험 및 담당자와의 미팅"
 layout: post
 date: 2022-05-04 20:51:00 +0900
@@ -47,8 +47,8 @@ AI 행원에 대한 국민 은행의 내부적인 고민을 확인한 저희는 
 
 ## STM 조사
 
-![4](https://user-images.githubusercontent.com/26592315/172181830-42d63b33-2072-4b29-b4f4-bbad22be17fd.jpg){: width="40%" height="40%"}{: .center}
+![4](https://user-images.githubusercontent.com/26592315/172181830-42d63b33-2072-4b29-b4f4-bbad22be17fd.jpg)
 
-![5](https://user-images.githubusercontent.com/26592315/172181833-ec9e34cf-ecfd-4638-ba5a-f7e678099f8c.jpg){: width="40%" height="40%"}{: .center}
+![5](https://user-images.githubusercontent.com/26592315/172181833-ec9e34cf-ecfd-4638-ba5a-f7e678099f8c.jpg)
 
 - 국민은행과 신한은행의 STM 기계의 기능으로는 실제 행원과의 화상 통화, 카드와 통장 발급, 바이오 인증 기능 존재
