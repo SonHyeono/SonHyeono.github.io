@@ -21,7 +21,7 @@
 encoding: utf-8 # Make sure the encoding is right
 lang: en-US
 title: Blog
-logo: "/assets/logos/logo.svg"
+logo: "/assets/images/logo.png"
 email: oktlrp7624583@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Themed by sonny
