@@ -18,7 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+encoding: utf-8 # Make sure the encoding is right
+lang: en-US
 title: Blog
+logo: "/assets/logos/logo.svg"
 email: oktlrp7624583@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Themed by sonny
