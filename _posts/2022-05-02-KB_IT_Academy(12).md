@@ -2,7 +2,7 @@
 title: "최종 프로젝트 주제 선정"
 layout: post
 date: 2022-05-02 23:29:00 +0900
-category: KB(Bank)-IT-Academy
+category: KB-IT-Academy
 ---
 
 ## 주제 선정

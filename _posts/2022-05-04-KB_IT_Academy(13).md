@@ -2,7 +2,7 @@
 title: "KB 국민은행 AI 행원 체험 및 담당자와의 미팅"
 layout: post
 date: 2022-05-04 20:51:00 +0900
-category: KB(Bank)-IT-Academy
+category: KB-IT-Academy
 ---
 
 ![image](https://user-images.githubusercontent.com/26592315/172118085-9c2600c4-c4f9-43b0-a89b-39113983ac77.png)

@@ -2,7 +2,7 @@
 title: "오디오 분류 시작"
 layout: post
 date: 2022-04-18 20:19:00 +0900
-category: KB(Bank)-IT-Academy
+category: KB-IT-Academy
 ---
 
 ## 보이스피싱을 분류할 수 있을까?

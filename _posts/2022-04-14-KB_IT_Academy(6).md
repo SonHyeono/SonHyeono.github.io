@@ -2,7 +2,7 @@
 title: "데이터 분석을 위한 머신러닝 (2)"
 layout: post
 date: 2022-04-14 22:03:00 +0900
-category: KB(Bank)-IT-Academy
+category: KB-IT-Academy
 ---
 
 ## 평가

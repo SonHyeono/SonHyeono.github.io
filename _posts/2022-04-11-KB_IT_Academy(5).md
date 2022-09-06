@@ -2,7 +2,7 @@
 title: "데이터 분석을 위한 머신러닝/딥러닝"
 layout: post
 date: 2022-04-11 20:46:00 +0900
-category: KB(Bank)-IT-Academy
+category: KB-IT-Academy
 ---
 
 ## 데이터 분석 기본

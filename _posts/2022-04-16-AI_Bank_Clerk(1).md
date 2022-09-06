@@ -2,7 +2,7 @@
 title: "AI 행원을 위한 음성인식"
 layout: post
 date: 2022-04-16 18:49:00 +0900
-category: KB(Bank)-IT-Academy
+category: KB-IT-Academy
 ---
 
 음성인식 API(Web Speech API)는 크게 [SpeechSynthesis](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis) (Text-to-Speech)와 [SpeechRecognition](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition) (Asynchronous Speech Recognition) 두 가지로 나뉩니다.

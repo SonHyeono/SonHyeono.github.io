@@ -2,7 +2,7 @@
 title: "최우수프로젝트상 수상 (수료식)"
 layout: post
 date: 2022-05-31 16:37:00 +0900
-category: KB(Bank)-IT-Academy
+category: KB-IT-Academy
 ---
 
 ### 최우수프로젝트상 수상!
