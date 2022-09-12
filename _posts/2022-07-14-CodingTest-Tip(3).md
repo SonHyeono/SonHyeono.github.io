@@ -7,6 +7,16 @@ category: CodingTest
 
 ## 꿀팁
 
+- mutable: list, dictionary, set
+
+- immutable: number, string, tuple
+
+- 개수가 몇십만개 이러면 dfs 보다 while문이 더 속도가 빠르다.
+
+- 개수가 몇십만개 이러면 반복문 돌리면서 계속 sum(list) 하는 것 보다 sum을 변수에 저장해두고 거기에 + , - 하면서 조건 비교하는게 훨씬 빠르다.
+
+- del이 가장 빠르고 pop()과 remove()는 비슷한 수행시간을 가지며 슬라이싱이 가장 느리다.
+
 ```python
 from itertools import combinations as cb
 
@@ -30,6 +40,18 @@ else:
 # 위의 것을 아래 줄 처럼 줄일 수 있다.
 num = num / 2 if num % 2 == 0 else num*3 + 1
 # -----------
+
+```
+
+## 시간
+
+- 큐를 이용하면 22,23,24 무조건 타임오버 생깁니다. 배열과 포인터를 이용해야해요. 어차피 정해진 두개의 큐를 빼고넣을뿐이므로 실제로 큐 그자체를 돌릴필요가 없어요. 하나의 큐 두개를 합친 하나의 배열만 만들어두고 그다음 큐1과 큐2 각각의 시작시점을 잡는 포인터에 해당하는 변수 두개만 변환해주면 훨신 더 효율적으로 가동합니다.
+
+- 즉, 몇십만개가 case로 있다면 직접 큐를 이용하지말고 배열에서 투포인터처럼 포인터로 이용하는 것이 속도 측면에서 효율적.
+
+  - 이때 투포인터를 이용하는데 비교해야하는 배열 두개를 합쳐야 한다. 왜냐하면 두개를 따로두면 포인터가 움직이는 것을 구현하기 어렵다.
+
+```python
 
 ```
 
@@ -141,4 +163,17 @@ while n:
 
 answer = int(tmp, base)
 # int의 기능으로는 base 진법으로 구성된 str 형식의 tmp를 10진법으로 변환해줌
+```
+
+## 배열 수정
+
+```python
+
+dfs(q1[1:], q2.append(q1[0]), res+1, tot)
+# 이렇게 하면 TypeError: 'NoneType' object is not iterable 에러가 난다.
+# list가 mutable이기 때문에 이런 에러가 난다.
+q2.append(q1[0])
+dfs(q1[1:], q2, res+1, tot)
+# 이렇게 하면 해결! append를 하고나서 원하는 작업을 진행!
+# append한것을 새로 집어넣으려고 하면 에러가 난다 nontype이니깐!
 ```
