@@ -151,7 +151,6 @@ values = ["A", "B", "C"]
 dict(zip(keys, values))
 # {1: 'A', 2: 'B', 3: 'C'}
 
-
 # ----
 
 # key 값을 기준으로 오름차순 정렬하여 리스트 출력
@@ -346,8 +345,8 @@ for j in a:
 a = list(map(str, range(10)))
 # ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
-
-# filter -------
+# -------
+# filter
 
 def is_man(user):
   return user["sex"] == "M"

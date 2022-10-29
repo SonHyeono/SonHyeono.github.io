@@ -17,6 +17,8 @@ category: CodingTest
 
 - del이 가장 빠르고 pop()과 remove()는 비슷한 수행시간을 가지며 슬라이싱이 가장 느리다.
 
+- 합을 비교할 경우 무조건 적으로 두개의 합을 구하지 말고 전체 합에서 빼는등 다양한 방법을 생각. 단순하게 쳐다보지 말자.
+
 ```python
 from itertools import combinations as cb
 
@@ -41,6 +43,15 @@ else:
 num = num / 2 if num % 2 == 0 else num*3 + 1
 # -----------
 
+```
+
+## 리스트
+
+```python
+e = [2,2,2,3]
+f = [1,1,1,1]
+print([a - b for a, b in zip(e,f)])
+# 다음과 같이 리스트 끼리의 경우는 for문으로 해결해야함.
 ```
 
 ## 시간
@@ -168,7 +179,6 @@ answer = int(tmp, base)
 ## 배열 수정
 
 ```python
-
 dfs(q1[1:], q2.append(q1[0]), res+1, tot)
 # 이렇게 하면 TypeError: 'NoneType' object is not iterable 에러가 난다.
 # list가 mutable이기 때문에 이런 에러가 난다.
